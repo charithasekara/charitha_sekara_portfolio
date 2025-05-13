@@ -87,6 +87,7 @@
   mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
   mask-composite: exclude;
   animation: border-rotate 4s linear infinite;
@@ -212,7 +213,7 @@
 }
 
 .count-up {
-  @apply text-4xl sm:text-5xl font-bold text-white mb-1;
+  @apply text-8xl sm:text-6xl font-bold text-white mb-1;
 }
 
 .count-label {
@@ -232,7 +233,7 @@
 }
 
 .btn-primary {
-  @apply bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-full transition-all hover:scale-105;
+  @apply bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-2xl border-4 border-purple-900 transition-all hover:scale-105;
 }
 
 .btn-secondary {
@@ -315,14 +316,14 @@
 } */
 .bento-card.minimal {
   /* background: linear-gradient(135deg, rgba(30, 30, 46, 0.6), rgba(24, 24, 37, 0.4)); */
-  background: linear-gradient(175deg, rgb(0, 0, 0), rgba(53, 1, 77, 0.596));
+  background: linear-gradient(175deg, rgb(19, 19, 19), rgba(53, 1, 77, 0.596));
   transition: background 0.3s ease;
   /* background-color: rgb(14, 14, 14); */
 }
 
 .bento-card:not(.featured):not(.minimal) {
   /* background: linear-gradient(135deg, rgba(39, 39, 55, 0.6), rgba(30, 30, 46, 0.4)); */
-  background: linear-gradient(160deg, rgb(0, 0, 0), rgba(53, 1, 77, 0.596));
+  background: linear-gradient(160deg, rgb(19, 19, 19), rgba(53, 1, 77, 0.596));
   transition: background 0.3s ease;
   /* background-color: rgb(14, 14, 14); */
 }
@@ -340,4 +341,11 @@
 /* Fix for skill cards */
 .skill-card-content {
   text-align: left;
+}
+
+.TextGradient{
+  background: linear-gradient(270deg, rgb(66, 66, 66), rgb(255, 255, 255));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }

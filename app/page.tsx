@@ -24,9 +24,9 @@ export default function Home() {
     <section className="py-10">
       <BentoGrid className="container main-layout mx-auto">
         {/* Card 1: Hero */}
-        <BentoCard colSpan={4} rowSpan={2} variant="featured" hasPersistentHover>
-          <div className="flex flex-col md:flex-row items-center gap-6" style={{ height: "100%" }}>
-            <div className="relative w-24 h-24 md:w-32 md:h-32 lg:w-40 lg:h-40 flex-shrink-0">
+        <BentoCard colSpan={3} rowSpan={1} variant="minimal" hasPersistentHover>
+          <div className="sm:ps-8 flex flex-col sm:flex-row items-center gap-6" style={{ height: "100%" }}>
+            <div className="relative w-24 h-24 md:w-32 md:h-32 lg:w-40 lg:h-40 flex-shrink-0 ">
               <Image
                 src="/charithaDp.png"
                 alt="Dp"
@@ -44,15 +44,17 @@ export default function Home() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
-                className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-2"
-              >
+                className="
+                  text-2xl sm:text-3xl md:text-4xl font-bold mb-2
+                  bg-clip-text text-transparent TextGradient
+                ">
                 Charitha Weerasekara
               </motion.h1>
               <motion.p
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.1 }}
-                className="text-lg sm:text-xl text-purple-400 mb-4"
+                className="text-lg sm:text-xl text-gray-300 mb-4"
               >
                 I&apos;m a UIX Engineer
               </motion.p>
@@ -72,7 +74,7 @@ export default function Home() {
         </BentoCard>
 
         {/* Card 2: Brief Bio */}
-        <BentoCard colSpan={2} rowSpan={1}>
+        {/* <BentoCard colSpan={2} rowSpan={1}>
           <div style={{ height: "100%" }}>
             <h3 className="text-lg font-medium text-white mb-2">Software Engineer from India</h3>
             <p className="text-sm text-gray-300">
@@ -80,12 +82,12 @@ export default function Home() {
               applications using modern technologies like React, Next.js, and TypeScript.
             </p>
           </div>
-        </BentoCard>
+        </BentoCard> */}
 
         {/* Card 3: Projects Count */}
         <BentoCard colSpan={1} rowSpan={1}>
           <div className="center-content" style={{ height: "100%" }}>
-            <CountUp end={56} labelText="Projects" labelIcon={<Briefcase className="w-4 h-4" />} />
+            <CountUp end={56} labelText="Projects" labelIcon={<Briefcase className="w-4 h-4" />} className="TextGradient"/>
           </div>
         </BentoCard>
 
@@ -96,8 +98,30 @@ export default function Home() {
           </div>
         </BentoCard>
 
+        {/* Card 9: WhatsApp */}
+        <BentoCard colSpan={1} rowSpan={1} variant="minimal">
+          <Link href="/contact" className="center-content group" style={{ height: "100%" }}>
+            <div className="flex items-center justify-center w-12 h-12 rounded-full bg-green-500/20 text-green-500 mb-2 group-hover:scale-110 transition-transform">
+              <BrandWhatsapp className="h-6 w-6" />
+            </div>
+            <h3 className="text-base font-medium text-white">WhatsApp</h3>
+            <p className="text-xs text-gray-400">Connect with me</p>
+          </Link>
+        </BentoCard>
+
+        {/* Card 10: Telegram */}
+        <BentoCard colSpan={1} rowSpan={1} variant="minimal">
+          <Link href="/contact" className="center-content group" style={{ height: "100%" }}>
+            <div className="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-500 mb-2 group-hover:scale-110 transition-transform">
+              <BrandTelegram className="h-6 w-6" />
+            </div>
+            <h3 className="text-base font-medium text-white">Telegram</h3>
+            <p className="text-xs text-gray-400">Message me</p>
+          </Link>
+        </BentoCard>
+
         {/* Card 5: Featured Project */}
-        <BentoCard colSpan={3} rowSpan={2}>
+        <BentoCard colSpan={2} rowSpan={2}>
           <div className="relative project-card-content" style={{ height: "100%" }}>
             <Image src="/placeholder.svg?height=400&width=600" alt="Featured Project" fill className="object-cover" />
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent flex flex-col justify-end p-6">
@@ -143,6 +167,16 @@ export default function Home() {
           </Link>
         </BentoCard>
 
+        <BentoCard colSpan={1} rowSpan={1} variant="minimal">
+          <div className="center-content" style={{ height: "100%" }}>
+            <div className="flex items-center justify-center w-10 h-10 rounded-full bg-green-500/20 text-green-500 mb-2">
+              <CheckCircle className="h-5 w-5" />
+            </div>
+            <h3 className="text-lg font-medium text-white">Available to Work</h3>
+            <p className="text-xs text-gray-400">Open for freelance projects</p>
+          </div>
+        </BentoCard>
+
         {/* Card 8: Highlighted Service */}
         <BentoCard colSpan={3} rowSpan={1}>
           <Link href="/services" className="service-card-content group" style={{ height: "100%" }}>
@@ -162,30 +196,9 @@ export default function Home() {
           </Link>
         </BentoCard>
 
-        {/* Card 9: WhatsApp */}
-        <BentoCard colSpan={1} rowSpan={1} variant="minimal">
-          <Link href="/contact" className="center-content group" style={{ height: "100%" }}>
-            <div className="flex items-center justify-center w-12 h-12 rounded-full bg-green-500/20 text-green-500 mb-2 group-hover:scale-110 transition-transform">
-              <BrandWhatsapp className="h-6 w-6" />
-            </div>
-            <h3 className="text-base font-medium text-white">WhatsApp</h3>
-            <p className="text-xs text-gray-400">Connect with me</p>
-          </Link>
-        </BentoCard>
-
-        {/* Card 10: Telegram */}
-        <BentoCard colSpan={1} rowSpan={1} variant="minimal">
-          <Link href="/contact" className="center-content group" style={{ height: "100%" }}>
-            <div className="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-500 mb-2 group-hover:scale-110 transition-transform">
-              <BrandTelegram className="h-6 w-6" />
-            </div>
-            <h3 className="text-base font-medium text-white">Telegram</h3>
-            <p className="text-xs text-gray-400">Message me</p>
-          </Link>
-        </BentoCard>
-
+      
         {/* Card 11: Skills Overview */}
-        <BentoCard colSpan={2} rowSpan={1}>
+        <BentoCard colSpan={3} rowSpan={1}>
           <Link href="/skills" className="flex flex-col" style={{ height: "100%" }}>
             <h3 className="text-lg font-medium text-white mb-3">My Skills Overview</h3>
             <div className="grid grid-cols-3 gap-3 mb-4">
@@ -209,7 +222,7 @@ export default function Home() {
         </BentoCard>
 
         {/* Card 12: Get in Touch */}
-        <BentoCard colSpan={6} rowSpan={1} variant="featured">
+        <BentoCard colSpan={3} rowSpan={1} variant="minimal">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4" style={{ height: "100%" }}>
             <div>
               <h3 className="text-xl sm:text-2xl font-bold text-white mb-2 text-center sm:text-left">Get in Touch</h3>
