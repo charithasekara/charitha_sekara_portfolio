@@ -13,7 +13,7 @@ export function BentoGrid({ children, className }: BentoGridProps) {
   return (
     <div
       className={cn(
-        "grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-3 auto-rows-[minmax(180px,auto)]",
+        "grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-3 auto-rows-[minmax(180px,auto)]",
         className,
       )}
     >
@@ -40,13 +40,14 @@ export function BentoCard({
   variant = "default",
 }: BentoCardProps) {
   const colSpanClass = {
-    1: "sm:col-span-1",
-    2: "sm:col-span-2",
-    3: "sm:col-span-3",
-    4: "sm:col-span-4 md:col-span-4",
-    5: "sm:col-span-5 md:col-span-5",
-    6: "sm:col-span-6 md:col-span-6",
-  }[colSpan]
+  1: "sm:col-span-1 md:col-span-1 lg:col-span-1",
+  2: "sm:col-span-2 md:col-span-2 lg:col-span-2",
+  3: "sm:col-span-3 md:col-span-3 lg:col-span-3",
+  4: "sm:col-span-4 md:col-span-4 lg:col-span-4",
+  5: "sm:col-span-5 md:col-span-5 lg:col-span-5",
+  6: "sm:col-span-6 md:col-span-6 lg:col-span-6",
+}[colSpan]
+
 
   const rowSpanClass = {
     1: "row-span-1",

@@ -1,7 +1,6 @@
 "use client"
 
 import type React from "react"
-
 import { useState, useEffect, useRef } from "react"
 import { motion } from "framer-motion"
 
@@ -9,6 +8,8 @@ interface CountUpProps {
   end: number
   duration?: number
   suffix?: string
+  suffixSize?: string // New prop for suffix size
+  suffixColor?: string // New prop for suffix color
   className?: string
   labelText?: string
   labelIcon?: React.ReactNode
@@ -18,6 +19,8 @@ export default function CountUp({
   end,
   duration = 2000,
   suffix = "+",
+  suffixSize = "0.5em", // Default size
+  suffixColor = "inherit", // Default color
   className = "",
   labelText,
   labelIcon,
@@ -42,8 +45,8 @@ export default function CountUp({
 
     return () => {
       if (countRef.current) {
-        observer.unobserve(countRef.current)
-      }
+  observer.unobserve(countRef.current)
+}
     }
   }, [])
 
@@ -71,7 +74,7 @@ export default function CountUp({
   }, [end, duration, isInView])
 
   return (
-    <div ref={countRef} className="flex flex-col">
+    <div ref={countRef} className="flex flex-col justify-center items-center">
       <motion.div
         initial={{ opacity: 0, y: 10 }}
         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
@@ -79,10 +82,10 @@ export default function CountUp({
         className={`count-up ${className}`}
       >
         {count}
-        {suffix}
+        <span style={{ fontSize: suffixSize, color: suffixColor }}>{suffix}</span>
       </motion.div>
       {labelText && (
-        <div className="count-label">
+        <div className="count-label flex items-center gap-2 mt-2 border border-stone-500 p-1 rounded-full px-2 bg-purple-500/20 text-white">
           {labelIcon}
           <span>{labelText}</span>
         </div>

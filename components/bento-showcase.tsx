@@ -28,12 +28,12 @@ export function BentoShowcase({ title, description, imageSrc, href = "#", classN
         className,
       )}
     >
-      <div className="relative h-full w-full">
+      <div className="relative h-full w-full overflow-hidden rounded-lg ">
         <Image
           src={imageSrc || "/placeholder.svg"}
           alt={title}
           fill
-          className="object-cover transition-transform duration-500 hover:scale-105"
+          className="object-cover transition-transform duration-500 hover:scale-105 rounded-lg"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent flex flex-col justify-end p-6">
           <h2 className="text-2xl sm:text-3xl font-bold text-white mb-2">{title}</h2>
