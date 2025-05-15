@@ -214,21 +214,21 @@ export default function Home() {
 
         {/* Card 5: Featured Project */}
         <BentoCard colSpan={1} rowSpan={1} className="feature-card">
-          <div
-            className="project-card-content h-full"
-            
-          >
+          <div className="project-card-content h-full">
             {/* Non-animating title */}
             <div className="center-content">
-            <div className="flex flex-row gap-2 items-center justify-center">
-              <Star className="h-4 w-4 text-purple-500" />
-              <p className="text-xs text-gray-400">Projects</p>
+              <div className="flex flex-row gap-2 items-center justify-center">
+                <Star className="h-4 w-4 text-purple-500" />
+                <p className="text-xs text-gray-400">Projects</p>
+              </div>
             </div>
-          </div>
-          <h3 className="mt-2 font-medium text-white flex justify-center">
-            Works Gallery
-          </h3>
-            <div className="relative h-full overflow-hidden rounded-xl my-3" style={{ height: "60%" }}>
+            <h3 className="mt-2 font-medium text-white flex justify-center">
+              Works Gallery
+            </h3>
+            <div
+              className="relative h-full overflow-hidden rounded-xl my-3"
+              style={{ height: "60%" }}
+            >
               <div className="flex animate-scroll whitespace-nowrap absolute z-0 h-full">
                 {projects.map((project, index) => (
                   <ProjectCard
@@ -272,22 +272,98 @@ export default function Home() {
         <BentoCard colSpan={2} rowSpan={1}>
           <Link
             href="/about"
-            className="center-content group h-full"
+            className="flex flex-col items-center justify-center h-full group"
           >
-            <div className="center-content">
             <div className="flex flex-row gap-2 items-center justify-center">
               <Star className="h-4 w-4 text-purple-500" />
               <p className="text-xs text-gray-400">About Me</p>
             </div>
-          </div>
-          <h3 className="mt-2 font-medium text-white flex justify-center">
-            More Details
-          </h3>
-            
-            <div className="count-label flex items-center gap-2 mt-2 border border-stone-500 p-1 rounded-full px-2 bg-purple-500/20 text-white">
-            hello
-</div>
-            <p className="text-xs text-gray-400 flex items-center">
+            <h3 className="mt-2 font-medium text-white">More Details</h3>
+            <div className="flex flex-col gap-2 w-full max-w-2xl my-3 -mx-[157px] ">
+              {/* Row 1 */}
+              <div className="flex animate-scroll whitespace-nowrap">
+                <span className="count-label flex items-center gap-2 border border-stone-500 p-1 rounded-md px-2 bg-purple-500/20 text-white mx-2">
+                  <Star className="h-4 w-4 text-purple-500" />
+                  Sri Lanka
+                </span>
+                <span className="count-label flex items-center gap-2 border border-stone-500 p-1 rounded-md px-2 bg-purple-500/20 text-white mx-2">
+                  <Star className="h-4 w-4 text-purple-500" />
+                  English & Tamil
+                </span>
+                <span className="count-label flex items-center gap-2 border border-stone-500 p-1 rounded-md px-2 bg-purple-500/20 text-white mx-2">
+                  <Star className="h-4 w-4 text-purple-500" />
+                  SUSL
+                </span>
+                {/* Duplicate for seamless looping */}
+                <span className="count-label flex items-center gap-2 border border-stone-500 p-1 rounded-md px-2 bg-purple-500/20 text-white mx-2">
+                  <Star className="h-4 w-4 text-purple-500" />
+                  Sri Lanka
+                </span>
+                <span className="count-label flex items-center gap-2 border border-stone-500 p-1 rounded-md px-2 bg-purple-500/20 text-white mx-2">
+                  <Star className="h-4 w-4 text-purple-500" />
+                  English & Tamil
+                </span>
+                <span className="count-label flex items-center gap-2 border border-stone-500 p-1 rounded-md px-2 bg-purple-500/20 text-white mx-2">
+                  <Star className="h-4 w-4 text-purple-500" />
+                  SUSL
+                </span>
+
+                <span className="count-label flex items-center gap-2 border border-stone-500 p-1 rounded-md px-2 bg-purple-500/20 text-white mx-2">
+                  <Star className="h-4 w-4 text-purple-500" />
+                  Sri Lanka
+                </span>
+                <span className="count-label flex items-center gap-2 border border-stone-500 p-1 rounded-md px-2 bg-purple-500/20 text-white mx-2">
+                  <Star className="h-4 w-4 text-purple-500" />
+                  English & Tamil
+                </span>
+                <span className="count-label flex items-center gap-2 border border-stone-500 p-1 rounded-md px-2 bg-purple-500/20 text-white mx-2">
+                  <Star className="h-4 w-4 text-purple-500" />
+                  SUSL
+                </span>
+              </div>
+              {/* Row 2 */}
+              <div className="flex animate-scroll-reverse whitespace-nowrap">
+                <span className="count-label flex items-center gap-2 border border-stone-500 p-1 rounded-md px-2 bg-purple-500/20 text-white mx-2">
+                  <Star className="h-4 w-4 text-purple-500" />
+                  CIS
+                </span>
+                <span className="count-label flex items-center gap-2 border border-stone-500 p-1 rounded-md px-2 bg-purple-500/20 text-white mx-2">
+                  <Star className="h-4 w-4 text-purple-500" />
+                  UIX Engineer
+                </span>
+                <span className="count-label flex items-center gap-2 border border-stone-500 p-1 rounded-md px-2 bg-purple-500/20 text-white mx-2">
+                  <Star className="h-4 w-4 text-purple-500" />
+                  Graphic Designer
+                </span>
+                {/* Duplicate for seamless looping */}
+                <span className="count-label flex items-center gap-2 border border-stone-500 p-1 rounded-md px-2 bg-purple-500/20 text-white mx-2">
+                  <Star className="h-4 w-4 text-purple-500" />
+                  CIS
+                </span>
+                <span className="count-label flex items-center gap-2 border border-stone-500 p-1 rounded-md px-2 bg-purple-500/20 text-white mx-2">
+                  <Star className="h-4 w-4 text-purple-500" />
+                  UIX Engineer
+                </span>
+                <span className="count-label flex items-center gap-2 border border-stone-500 p-1 rounded-md px-2 bg-purple-500/20 text-white mx-2">
+                  <Star className="h-4 w-4 text-purple-500" />
+                  Graphic Designer
+                </span>
+
+                <span className="count-label flex items-center gap-2 border border-stone-500 p-1 rounded-md px-2 bg-purple-500/20 text-white mx-2">
+                  <Star className="h-4 w-4 text-purple-500" />
+                  CIS
+                </span>
+                <span className="count-label flex items-center gap-2 border border-stone-500 p-1 rounded-md px-2 bg-purple-500/20 text-white mx-2">
+                  <Star className="h-4 w-4 text-purple-500" />
+                  UIX Engineer
+                </span>
+                <span className="count-label flex items-center gap-2 border border-stone-500 p-1 rounded-md px-2 bg-purple-500/20 text-white mx-2">
+                  <Star className="h-4 w-4 text-purple-500" />
+                  Graphic Designer
+                </span>
+              </div>
+            </div>
+            <p className="text-xs text-gray-400 flex items-center justify-center">
               <Button className="btn-primary">
                 View Profile
                 <ArrowRight className="ml-2 h-4 w-4" />
@@ -296,6 +372,7 @@ export default function Home() {
           </Link>
         </BentoCard>
 
+        
         {/* Card 8: Highlighted Service */}
         <BentoCard colSpan={2} rowSpan={1}>
           <Link

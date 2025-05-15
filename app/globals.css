@@ -383,3 +383,18 @@
   animation: fade 3s ease-in-out infinite;
   display: inline-block;
 }
+
+/* Right scroll animation (Row 2) */
+@keyframes scrollReverse {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
+
+.animate-scroll-reverse {
+  display: flex;
+  animation: scrollReverse 10s linear infinite;
+}
+
+.animate-scroll-reverse:hover {
+  animation-play-state: paused;
+}
