@@ -24,7 +24,7 @@ export function BentoShowcase({ title, description, imageSrc, href = "#", classN
       viewport={{ once: true }}
       transition={{ duration: 0.5 }}
       className={cn(
-        "bento-card col-span-1 sm:col-span-2 md:col-span-3 lg:col-span-3 row-span-2 overflow-hidden p-0 glass-card featured",
+        "bento-card col-span-1 sm:col-span-2 md:col-span-3 lg:col-span-3 row-span-2 overflow-hidden p-0 glass-card",
         className,
       )}
     >

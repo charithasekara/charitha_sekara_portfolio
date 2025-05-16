@@ -137,9 +137,9 @@
 }
 
 /* Update the bento-grid class to match the new responsive grid */
-.bento-grid {
+/* .bento-grid {
   @apply grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3 auto-rows-[minmax(180px,auto)];
-}
+} */
 
 /* Add additional responsive styles for cards */
 .bento-card {
@@ -326,7 +326,7 @@
 
 .bento-card:not(.featured):not(.minimal) {
   /* background: linear-gradient(135deg, rgba(39, 39, 55, 0.6), rgba(30, 30, 46, 0.4)); */
-  background: linear-gradient(160deg, rgb(19, 19, 19), rgba(53, 1, 77, 0.596));
+  background: linear-gradient(160deg, rgb(19, 19, 19), rgba(35, 0, 50, 0.596));
   transition: background 0.3s ease;
   /* background-color: rgb(14, 14, 14); */
 }
