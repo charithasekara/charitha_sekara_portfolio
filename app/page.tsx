@@ -23,6 +23,22 @@ import {
   Star,
   Target,
   TabletSmartphone,
+  Boxes,
+  Braces,
+  UserSearch,
+  Redo2,
+  Pencil,
+  BookText,
+  Frame,
+  Figma,
+  Hexagon,
+  Codesandbox,
+  Asterisk,
+  PencilRuler,
+  SpellCheck2,
+  CodeXml,
+  Sparkles,
+  Wand,
 } from "lucide-react";
 import ProjectCard from "@/components/project-card";
 
@@ -52,8 +68,7 @@ export default function Home() {
         {/* Card 1: Hero */}
         <BentoCard colSpan={3} rowSpan={1} variant="minimal" hasPersistentHover>
           <div
-            className="sm:ps-8 flex flex-col sm:flex-row items-center gap-6"
-            style={{ height: "100%" }}
+            className="lg:ps-8 flex flex-col lg:flex-row items-center gap-6 h-full"
           >
             <div className="relative w-24 h-24 md:w-32 md:h-32 lg:w-40 lg:h-40 flex-shrink-0 ">
               <Image
@@ -68,7 +83,7 @@ export default function Home() {
                 <span className="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
               </span>
             </div>
-            <div className="flex-1 text-center md:text-left">
+            <div className="flex-1 text-center lg:text-left">
               <motion.h1
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -92,7 +107,7 @@ export default function Home() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.2 }}
-                className="flex justify-center md:justify-start"
+                className="flex justify-center lg:justify-start"
               >
                 <Button className="btn-primary">
                   Explore My Work
@@ -145,15 +160,15 @@ export default function Home() {
         {/* Card 3: Projects Count */}
 
         {/* Card 6: work process */}
-        <BentoCard colSpan={1} rowSpan={2} variant="minimal">
+        <BentoCard colSpan={1} rowSpan={2} variant="minimal" className="work-process-card md:col-span-1">
           <div className="center-content">
             <div className="flex flex-row gap-2 items-center justify-center">
               <Star className="h-4 w-4 text-purple-500" />
               <p className="text-xs text-gray-400">Work Process</p>
             </div>
           </div>
-          <h3 className="mt-2 font-medium text-white flex justify-center">
-            Workflow Highlights
+          <h3 className="text-lg mt-2 font-medium text-white flex justify-center">
+            Workflow Highlight
           </h3>
           <div className="h-px bg-gray-800 my-2 -m-6"></div>
           <div className="flex flex-col gap-3 mt-4">
@@ -213,7 +228,7 @@ export default function Home() {
         </BentoCard> */}
 
         {/* Card 5: Featured Project */}
-        <BentoCard colSpan={1} rowSpan={1} className="feature-card">
+        <BentoCard colSpan={1} rowSpan={1} className="feature-card md:col-span-4">
           <div className="project-card-content h-full">
             {/* Non-animating title */}
             <div className="center-content">
@@ -222,7 +237,7 @@ export default function Home() {
                 <p className="text-xs text-gray-400">Projects</p>
               </div>
             </div>
-            <h3 className="mt-2 font-medium text-white flex justify-center">
+            <h3 className="text-lg mt-2 font-medium text-white flex justify-center">
               Works Gallery
             </h3>
             <div
@@ -248,7 +263,18 @@ export default function Home() {
                     // category={project.category}
                     imageSrc={project.imageSrc}
                     href={project.href}
-                    className="inline-block w-full max-w-[300px] mx-4 animate-fade"
+                    className="inline-block min-w-[150px] max-w-[300px] mx-4 animate-fade"
+                  />
+                ))}
+
+                 {projects.map((project, index) => (
+                  <ProjectCard
+                    key={`dup-${index}`}
+                    // title={project.title}
+                    // category={project.category}
+                    imageSrc={project.imageSrc}
+                    href={project.href}
+                    className="inline-block min-w-[150px] max-w-[300px] mx-4 animate-fade"
                   />
                 ))}
               </div>
@@ -269,7 +295,7 @@ export default function Home() {
         </BentoCard>
 
         {/* Card 7: Learn More About Me */}
-        <BentoCard colSpan={2} rowSpan={1}>
+        <BentoCard colSpan={2} rowSpan={1} className="about-card lg:col-span-3 xl:col-span-2">
           <Link
             href="/about"
             className="flex flex-col items-center justify-center h-full group"
@@ -278,8 +304,8 @@ export default function Home() {
               <Star className="h-4 w-4 text-purple-500" />
               <p className="text-xs text-gray-400">About Me</p>
             </div>
-            <h3 className="mt-2 font-medium text-white">More Details</h3>
-            <div className="flex flex-col gap-2 w-full max-w-2xl my-3 -mx-[157px] ">
+            <h3 className="text-lg mt-2 font-medium text-white">More Details</h3>
+            <div className="flex flex-col gap-2 w-full max-w-2xl my-3 mb-4 -mx-[157px] ">
               {/* Row 1 */}
               <div className="flex animate-scroll whitespace-nowrap">
                 <span className="count-label flex items-center gap-2 border border-stone-500 p-1 rounded-md px-2 bg-purple-500/20 text-white mx-2">
@@ -372,78 +398,185 @@ export default function Home() {
           </Link>
         </BentoCard>
 
-        
         {/* Card 8: Highlighted Service */}
-        <BentoCard colSpan={2} rowSpan={1}>
+        <BentoCard colSpan={2} rowSpan={1} className="service-card md:col-span-2">
           <Link
             href="/services"
-            className="service-card-content group"
-            style={{ height: "100%" }}
+            className="flex flex-col items-center justify-center h-full group"
           >
-            <div className="flex items-center gap-3 mb-3">
-              <div className="w-10 h-10 rounded-full flex items-center justify-center bg-purple-500/20 text-purple-500 group-hover:scale-110 transition-transform">
-                <Code className="h-5 w-5" />
+            <div className="flex flex-row gap-2 items-center justify-center">
+              <Boxes className="h-4 w-4 text-purple-500" />
+              <p className="text-xs text-gray-400">Services</p>
+            </div>
+            <h3 className="text-lg mt-2 font-medium text-white">Service Suite</h3>
+            <div className="flex flex-col gap-2 w-full max-w-2xl my-3 mb-4 -mx-[157px] ">
+              {/* Row 1 */}
+              <div className="flex animate-scroll-reverse whitespace-nowrap">
+                <span className="count-label flex items-center gap-2 border border-stone-500 p-1 rounded-md px-2 bg-purple-500/20 text-white mx-2">
+                  <Pencil className="h-4 w-4 text-purple-500" />
+                  Web & Mobile UI Design
+                </span>
+                <span className="count-label flex items-center gap-2 border border-stone-500 p-1 rounded-md px-2 bg-purple-500/20 text-white mx-2">
+                  <Braces className="h-4 w-4 text-purple-500" />
+                  Web & Mobile Development
+                </span>
+                <span className="count-label flex items-center gap-2 border border-stone-500 p-1 rounded-md px-2 bg-purple-500/20 text-white mx-2">
+                  <UserSearch className="h-4 w-4 text-purple-500" />
+                  UI UX Research
+                </span>
+                <span className="count-label flex items-center gap-2 border border-stone-500 p-1 rounded-md px-2 bg-purple-500/20 text-white mx-2">
+                  <Redo2 className="h-4 w-4 text-purple-500" />
+                  UI Revamp
+                </span>
+                {/* Duplicate for seamless looping */}
+                <span className="count-label flex items-center gap-2 border border-stone-500 p-1 rounded-md px-2 bg-purple-500/20 text-white mx-2">
+                  <Pencil className="h-4 w-4 text-purple-500" />
+                  Web & Mobile UI Design
+                </span>
+                <span className="count-label flex items-center gap-2 border border-stone-500 p-1 rounded-md px-2 bg-purple-500/20 text-white mx-2">
+                  <Braces className="h-4 w-4 text-purple-500" />
+                  Web & Mobile Development
+                </span>
+                <span className="count-label flex items-center gap-2 border border-stone-500 p-1 rounded-md px-2 bg-purple-500/20 text-white mx-2">
+                  <UserSearch className="h-4 w-4 text-purple-500" />
+                  UI UX Research
+                </span>
+                <span className="count-label flex items-center gap-2 border border-stone-500 p-1 rounded-md px-2 bg-purple-500/20 text-white mx-2">
+                  <Redo2 className="h-4 w-4 text-purple-500" />
+                  UI Revamp
+                </span>
               </div>
-              <h3 className="text-lg font-medium text-white">
-                Web Development
-              </h3>
+              {/* Row 2 */}
+              <div className="flex animate-scroll whitespace-nowrap">
+                <span className="count-label flex items-center gap-2 border border-stone-500 p-1 rounded-md px-2 bg-purple-500/20 text-white mx-2">
+                  <PenTool className="h-4 w-4 text-purple-500" />
+                  Graphic Design
+                </span>
+                <span className="count-label flex items-center gap-2 border border-stone-500 p-1 rounded-md px-2 bg-purple-500/20 text-white mx-2">
+                  <Frame className="h-4 w-4 text-purple-500" />
+                  Logo Design
+                </span>
+                <span className="count-label flex items-center gap-2 border border-stone-500 p-1 rounded-md px-2 bg-purple-500/20 text-white mx-2">
+                  <BookText className="h-4 w-4 text-purple-500" />
+                  Flyer Design
+                </span>
+                {/* Duplicate for seamless looping */}
+                <span className="count-label flex items-center gap-2 border border-stone-500 p-1 rounded-md px-2 bg-purple-500/20 text-white mx-2">
+                  <PenTool className="h-4 w-4 text-purple-500" />
+                  Graphic Design
+                </span>
+                <span className="count-label flex items-center gap-2 border border-stone-500 p-1 rounded-md px-2 bg-purple-500/20 text-white mx-2">
+                  <Frame className="h-4 w-4 text-purple-500" />
+                  Logo Design
+                </span>
+                <span className="count-label flex items-center gap-2 border border-stone-500 p-1 rounded-md px-2 bg-purple-500/20 text-white mx-2">
+                  <BookText className="h-4 w-4 text-purple-500" />
+                  Flyer Design
+                </span>
+              </div>
             </div>
-            <p className="text-sm text-gray-300 mb-4">Crafting</p>
-            <div className="mt-auto flex items-center text-purple-400 text-sm">
-              View Services{" "}
-              <ArrowRight className="ml-1 h-3 w-3 group-hover:translate-x-1 transition-transform" />
-            </div>
+            <p className="text-xs text-gray-400 flex items-center justify-center">
+              <Button className="btn-primary">
+                View Services
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Button>
+            </p>
           </Link>
         </BentoCard>
 
         {/* Card 11: Skills Overview */}
-        <BentoCard colSpan={1} rowSpan={1}>
+        <BentoCard colSpan={1} rowSpan={1} className="stack-card">
           <Link
             href="/skills"
-            className="flex flex-col"
-            style={{ height: "100%" }}
+            className="flex flex-col items-center justify-center h-full group "
           >
-            <h3 className="text-lg font-medium text-white mb-3">
-              My Skills Overview
-            </h3>
-            <div className="grid grid-cols-3 gap-3 mb-4">
-              <div className="flex flex-col items-center p-2 rounded-lg bg-gray-800/50">
-                <Cpu className="h-5 w-5 text-purple-500 mb-1" />
-                <span className="text-xs text-gray-300">React</span>
+            <div className="flex flex-row gap-2 items-center justify-center">
+              <CodeXml className="h-4 w-4 text-purple-500" />
+              <p className="text-xs text-gray-400">My Stacks</p>
+            </div>
+            <h3 className="text-lg mt-2 font-medium text-white">Tech Arsenal</h3>
+
+            <div className="flex flex-row gap-3 my-3 mb-4 animate-scroll whitespace-nowrap">
+              <div className="flex items-center gap-3 border border-stone-500 p-1 rounded-md pl-1 px-2 bg-purple-500/20 text-white">
+                <PencilRuler className="h-6 w-6  p-1 rounded-md bg-purple-400/20 text-white" />
+                <p className="text-sm text-gray-300 font-medium">Figma</p>
               </div>
-              <div className="flex flex-col items-center p-2 rounded-lg bg-gray-800/50">
-                <Cpu className="h-5 w-5 text-purple-500 mb-1" />
-                <span className="text-xs text-gray-300">Next.js</span>
+              <div className="flex items-center gap-3 border border-stone-500 p-1 rounded-md pl-1 px-2 bg-purple-500/20 text-white">
+                <Hexagon className="h-6 w-6  p-1 rounded-md bg-purple-400/20 text-white" />
+                <p className="text-sm text-gray-300 font-medium">NextJs</p>
               </div>
-              <div className="flex flex-col items-center p-2 rounded-lg bg-gray-800/50">
-                <Cpu className="h-5 w-5 text-purple-500 mb-1" />
-                <span className="text-xs text-gray-300">TypeScript</span>
+              <div className="flex items-center gap-3 border border-stone-500 p-1 rounded-md pl-1 px-2 bg-purple-500/20 text-white">
+                <Asterisk className="h-6 w-6  p-1 rounded-md bg-purple-400/20 text-white" />
+                <p className="text-sm text-gray-300 font-medium">ReactJS</p>
+              </div>
+              <div className="flex items-center gap-3 border border-stone-500 p-1 rounded-md pl-1 px-2 bg-purple-500/20 text-white">
+                <SpellCheck2 className="h-6 w-6  p-1 rounded-md bg-purple-400/20 text-white" />
+                <p className="text-sm text-gray-300 font-medium">Angular</p>
+              </div>
+
+              <div className="flex items-center gap-3 border border-stone-500 p-1 rounded-md pl-1 px-2 bg-purple-500/20 text-white">
+                <PencilRuler className="h-6 w-6  p-1 rounded-md bg-purple-400/20 text-white" />
+                <p className="text-sm text-gray-300 font-medium">Figma</p>
+              </div>
+              <div className="flex items-center gap-3 border border-stone-500 p-1 rounded-md pl-1 px-2 bg-purple-500/20 text-white">
+                <Hexagon className="h-6 w-6  p-1 rounded-md bg-purple-400/20 text-white" />
+                <p className="text-sm text-gray-300 font-medium">NextJs</p>
+              </div>
+              <div className="flex items-center gap-3 border border-stone-500 p-1 rounded-md pl-1 px-2 bg-purple-500/20 text-white">
+                <Asterisk className="h-6 w-6  p-1 rounded-md bg-purple-400/20 text-white" />
+                <p className="text-sm text-gray-300 font-medium">ReactJS</p>
+              </div>
+              <div className="flex items-center gap-3 border border-stone-500 p-1 rounded-md pl-1 px-2 bg-purple-500/20 text-white">
+                <SpellCheck2 className="h-6 w-6  p-1 rounded-md bg-purple-400/20 text-white" />
+                <p className="text-sm text-gray-300 font-medium">Angular</p>
+              </div>
+
+              <div className="flex items-center gap-3 border border-stone-500 p-1 rounded-md pl-1 px-2 bg-purple-500/20 text-white">
+                <PencilRuler className="h-6 w-6  p-1 rounded-md bg-purple-400/20 text-white" />
+                <p className="text-sm text-gray-300 font-medium">Figma</p>
+              </div>
+              <div className="flex items-center gap-3 border border-stone-500 p-1 rounded-md pl-1 px-2 bg-purple-500/20 text-white">
+                <Hexagon className="h-6 w-6  p-1 rounded-md bg-purple-400/20 text-white" />
+                <p className="text-sm text-gray-300 font-medium">NextJs</p>
+              </div>
+              <div className="flex items-center gap-3 border border-stone-500 p-1 rounded-md pl-1 px-2 bg-purple-500/20 text-white">
+                <Asterisk className="h-6 w-6  p-1 rounded-md bg-purple-400/20 text-white" />
+                <p className="text-sm text-gray-300 font-medium">ReactJS</p>
+              </div>
+              <div className="flex items-center gap-3 border border-stone-500 p-1 rounded-md pl-1 px-2 bg-purple-500/20 text-white">
+                <SpellCheck2 className="h-6 w-6  p-1 rounded-md bg-purple-400/20 text-white" />
+                <p className="text-sm text-gray-300 font-medium">Angular</p>
               </div>
             </div>
-            <div className="mt-auto flex items-center text-purple-400 text-sm">
-              View All Skills{" "}
-              <ArrowRight className="ml-1 h-3 w-3 group-hover:translate-x-1 transition-transform" />
-            </div>
+            <Button className="btn-primary">
+              View Profile
+              <ArrowRight className="ml-2 h-4 w-4" />
+            </Button>
           </Link>
         </BentoCard>
 
         {/* Card 12: Get in Touch */}
-        <BentoCard colSpan={6} rowSpan={1} variant="minimal">
+        <BentoCard colSpan={6} rowSpan={1} variant="minimal" className="contact-card md:col-span-3 lg:col-span-2 xl:col-span-6">
           <div
-            className="flex flex-col sm:flex-row items-center justify-between gap-4"
-            style={{ height: "100%" }}
+            className="flex flex-col items-center justify-center gap-3 h-full"
           >
-            <div>
-              <h3 className="text-xl sm:text-2xl font-bold text-white mb-2 text-center sm:text-left">
-                Get in Touch
+            <div className="w-10 h-10 rounded-full flex items-center justify-center bg-purple-500/20 text-purple-500">
+              <Wand className="h-5 w-5" />
+            </div>
+            <div className="flex flex-col items-center justify-center">
+              <h3 className="font-medium text-lg text-white text-center">
+                Let's Work Together
               </h3>
-              {/* <p className="text-gray-300 mb-4 sm:mb-0 text-center sm:text-left">
-                Have a project in mind? Let's discuss how I can help bring your ideas to life.
-              </p> */}
+              <p className="text-gray-300 mb-3 text-center">
+                Have a project in mind? Let's discuss how I can help bring your
+                ideas to life.
+              </p>
+              <Link href="/contact">
               <Button className="btn-primary w-full sm:w-auto">
                 <Phone className="mr-2 h-4 w-4" />
                 Contact Me
               </Button>
+              </Link>
             </div>
           </div>
         </BentoCard>

@@ -199,7 +199,7 @@ export default function AboutPage() {
         </BentoCard>
 
         {/* Card 12: Skills Preview */}
-        <BentoCard colSpan={6} rowSpan={1} variant="featured">
+        <BentoCard colSpan={1} rowSpan={1} variant="featured">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <div>
               <h3 className="text-xl sm:text-2xl font-bold text-white mb-3 text-center md:text-left">My Skills</h3>
