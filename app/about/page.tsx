@@ -34,6 +34,9 @@ import {
   CookingPot,
   BookOpenCheck,
   BriefcaseBusiness,
+  Braces,
+  Activity,
+  ShieldCheck,
 } from "lucide-react";
 import Link from "next/link";
 
@@ -234,7 +237,7 @@ export default function AboutPage() {
               </h3>
             </div>
           </div>
-          <div className="space-y-3 p-2 rounded-xl bg-purple-500/20">
+          <div className="space-y-3 p-2 py-3 rounded-xl bg-purple-500/20">
             <div className="flex gap-3 items-start mt-[4px]">
               <MapPinHouse className="h-6 w-6  p-1 rounded-md bg-purple-400/20 text-purple-400" />
               <div className="flex flex-col">
@@ -267,20 +270,30 @@ export default function AboutPage() {
               </ul>
             </div>
 
-                        <div className="h-px bg-purple-400/20 my-2 -m-2"></div>
+            <div className="h-px bg-purple-400/20 my-2 -m-2"></div>
 
             <h5 className=" text-gray-200">Tools & Technologies</h5>
 
-            <div>
-              <ul className="list-disc list-inside text-gray-400 text-xs">
-                <li>Figma</li>
-                <li>ReactJS</li>
-                <li>NextJS</li>
-                <li>Angular</li>
-                <li>Tailwind CSS</li>
-              </ul>
+            <div className="list-disc  flex text-gray-400 text-xs flex-wrap gap-3 mb-3">
+              <span className="text-xs border rounded-md bg-purple-500/20 text-gray-400 px-2 py-1">
+                Figma
+              </span>
+              <span className="text-xs border rounded-md bg-purple-500/20 text-gray-400 px-2 py-1">
+                Angular
+              </span>
+              <span className="text-xs border rounded-md bg-purple-500/20 text-gray-400 px-2 py-1">
+                Scss
+              </span>
+              <span className="text-xs border rounded-md bg-purple-500/20 text-gray-400 px-2 py-1">
+                Adobe Illustrator
+              </span>
+              <span className="text-xs border rounded-md bg-purple-500/20 text-gray-400 px-2 py-1">
+                Tailwind CSS
+              </span>
+              <span className="text-xs border rounded-md bg-purple-500/20 text-gray-400 px-2 py-1">
+                Adobe XD
+              </span>
             </div>
-
           </div>
         </BentoCard>
 
@@ -354,20 +367,67 @@ export default function AboutPage() {
         </BentoCard>
 
         {/* Card 8: Achievements */}
-        <BentoCard colSpan={2} rowSpan={1}>
-          <div className="flex items-start gap-3">
-            <div className="w-10 h-10 rounded-lg flex items-center justify-center bg-yellow-500/20 text-yellow-500">
-              <Trophy className="h-5 w-5" />
+        <BentoCard colSpan={1} rowSpan={1}>
+          <div className="flex flex-col justify-center items-center gap-3 mb-3">
+            <div className="w-10 h-10 rounded-lg flex items-center justify-center bg-purple-400/20 text-gray-50">
+              <Braces className="h-5 w-5" />
             </div>
             <div>
-              <h3 className="text-lg font-medium text-white">Achievements</h3>
-              <p className="text-sm text-gray-300 mt-1">Top Freelancer 2023</p>
-              <p className="text-xs text-gray-400">
-                Recognized for exceptional client satisfaction and project
-                delivery
+              <h3 className="text-lg font-medium text-white">Hackathons</h3>
+            </div>
+          </div>
+          <div className="flex items-start gap-3 border-stone-500 p-1 rounded-xl py-2 px-2 bg-purple-500/20 text-purple-500">
+            <div className="p-1 rounded-md bg-purple-400/20 text-purple-400">
+              <Trophy className="h-4 w-4" />
+            </div>
+            <div>
+              <p className="text-sm text-gray-200 text-bold font-medium">
+                UCSC | Finalists in MadHAck 2021
+              </p>
+              <p className="text-xs mt-1 text-gray-400 font-medium">
+                Developer | Designer
               </p>
             </div>
           </div>
+        </BentoCard>
+
+        {/* Card 8: Extra Activities */}
+        <BentoCard colSpan={1} rowSpan={1}>
+          <div className="flex flex-col justify-center items-center gap-3 mb-3">
+            <div className="w-10 h-10 rounded-lg flex items-center justify-center bg-purple-400/20 text-gray-50">
+              <Activity className="h-5 w-5" />
+            </div>
+            <div>
+              <h3 className="text-lg font-medium text-white">
+                Extra Activities
+              </h3>
+            </div>
+          </div>
+          
+          <div className="flex items-start gap-3 border-stone-500 p-1 rounded-xl py-2 px-2 bg-purple-500/20 text-purple-500">
+            <div className="p-1 rounded-md bg-purple-400/20 text-purple-400">
+              <ShieldCheck className="h-4 w-4" />
+            </div>
+            <div>
+              <p className="text-sm text-gray-200 text-bold font-medium">
+                IEEE Student Branch | SUSL
+              </p>
+              <p className="text-xs mt-1 text-gray-400 font-medium">Past Member</p>
+            </div>
+          </div>
+
+          {/* <div className="flex items-start gap-3 border-stone-500 p-1 rounded-xl py-2 px-2 bg-purple-500/20 text-purple-500">
+            <div className="p-1 rounded-md bg-purple-400/20 text-purple-400">
+              <Trophy className="h-4 w-4" />
+            </div>
+            <div>
+              <p className="text-sm text-gray-200 text-bold font-medium">
+                IEEE Student Branch | SUSL
+              </p>
+              <p className="text-xs text-gray-400 font-medium">Past Member</p>
+            </div>
+          </div> */}
+          
         </BentoCard>
 
         {/* Card 9: Fun Fact */}
