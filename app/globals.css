@@ -252,7 +252,7 @@
 }
 
 .btn-icon {
-  @apply  border-purple-900 text-white border-4 hover:bg-purple-700 px-4 py-2 rounded-full transition-all hover:scale-105;
+  @apply border-purple-900 text-white border-4 hover:bg-purple-700 px-4 py-2 rounded-full transition-all hover:scale-105;
 }
 /* Glass effect for cards */
 .glass-card {
@@ -415,51 +415,76 @@
   animation-play-state: paused;
 }
 
-.project-full-container{
- border-radius: 1.75rem;
-  background: linear-gradient(135deg, rgba(30, 30, 40, 0.9), rgba(20, 0, 56, 0.9));
-padding: 1rem;
+.project-full-container {
+  @apply rounded-3xl p-4 transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/10 border border-gray-700/50 hover:border-purple-500/50 relative overflow-hidden;
+  padding: 1rem;
+  background: linear-gradient(160deg, rgb(19, 19, 19), rgba(35, 0, 50, 0.596));
+  transition: background 0.3s ease;
 }
 
 .project-showcase-card {
   display: grid;
   gap: 1rem;
-  
- 
+
   /* Mobile first: 1 column */
   grid-template-rows: repeat(2, minmax(0, 1fr));
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
+.project-full-container::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  /* background: linear-gradient(to right, transparent, rgba(34, 5, 104, 0.986), rgba(6, 1, 19, 0.795)); */
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+  transition: all 0.5s ease;
+}
+
+.project-full-container:hover::before {
+  background: linear-gradient(
+    90deg,
+    rgba(139, 92, 246, 0.2),
+    rgba(192, 132, 252, 0.7),
+    rgba(217, 70, 239, 0.5),
+    rgba(139, 92, 246, 0.2)
+  );
+  background-size: 300% 100%;
+  animation: border-rotate 4s linear infinite;
+}
+
 /* Large screens (optional) */
 @media (max-width: 768px) {
   .project-showcase-card {
-      grid-template-rows: repeat(1, minmax(0, 1fr));
-  grid-template-columns: repeat(1, minmax(0, 1fr));
+    grid-template-rows: repeat(1, minmax(0, 1fr));
+    grid-template-columns: repeat(1, minmax(0, 1fr));
   }
 }
 
 /* Optional styling for the individual cards */
 .project-page-card {
   min-height: 236px;
-
   @media screen and (max-width: 768px) {
     min-height: 300px;
-    
   }
 }
 
 /* Fix for project cards */
 .project-card-content {
   text-align: left;
-  -webkit-backdrop-filter: blur(6px);
-  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
   padding: 1rem;
   border-radius: 1.75rem;
   background: linear-gradient(
     135deg,
-    rgba(30, 30, 40, 0.9),
-    rgba(20, 0, 56, 0.9)
+    rgba(39, 39, 39, 0.555),
+    rgba(20, 20, 20, 0.356)
   );
   /* border: 1px solid rgba(255, 255, 255, 0.1); */
   transition: all 0.3s ease;
@@ -470,12 +495,30 @@ padding: 1rem;
     transform: translateY(-2px) scale(1.01);
     background: linear-gradient(
       135deg,
-      rgba(30, 30, 40, 0.9),
-      rgba(20, 0, 56, 0.9)
+      rgba(39, 39, 39, 0.555),
+      rgba(20, 20, 20, 0.527)
     );
     box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
     border: 1px solid rgba(255, 255, 255, 0.1);
     transition: all 0.3s ease;
+  }
 }
+.carousl-conatiner {
+  height: 300px;
+  width: 750px;
 
+  @media screen and (max-width: 640px) {
+    height: 200px;
+    width: 300px;
+  }
+
+  @media screen and (max-width: 400px) {
+    height: 200px;
+    width: 270px; 
+  }
+
+  @media screen and (min-width: 1000px) {
+    height: 300px;
+    width: 950px; 
+  }
 }

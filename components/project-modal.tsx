@@ -1,8 +1,16 @@
-import Image from "next/image"
-import Link from "next/link"
-import { useState } from "react"
-import { Button } from "@/components/ui/button"
-import { X, Github, ChevronLeft, ChevronRight } from "lucide-react"
+import Image from "next/image";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import { X, Github } from "lucide-react";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
+import Autoplay from "embla-carousel-autoplay";
+import * as React from "react";
 
 type Project = {
   title: string;
@@ -20,73 +28,69 @@ interface ProjectModalProps {
 }
 
 export default function ProjectModal({ project, onClose }: ProjectModalProps) {
-  const [currentImageIndex, setCurrentImageIndex] = useState(0)
+  const plugin = React.useRef(
+    Autoplay({ delay: 2000, stopOnInteraction: true })
+  );
 
-  if (!project) return null
-
-  const handlePrevImage = () => {
-    setCurrentImageIndex((prev) => (prev === 0 ? project.images.length - 1 : prev - 1))
-  }
-
-  const handleNextImage = () => {
-    setCurrentImageIndex((prev) => (prev === project.images.length - 1 ? 0 : prev + 1))
-  }
+  if (!project) return null;
 
   return (
-    <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
-      <div className="bg-gray-900 rounded-lg max-w-2xl w-full p-6 relative max-h-[90vh] overflow-y-auto">
-        {/* <button
-          onClick={onClose}
-          className="absolute top-4 right-4 text-gray-400 hover:text-white z-10"
-        >
-          <X className="h-6 w-6" />
-        </button> */}
-        <h2 className="text-2xl font-bold text-white mb-4">{project.title}</h2>
-        <div className="relative aspect-video rounded-lg overflow-hidden mb-4">
-          <Image
-            src={project.images[currentImageIndex]}
-            alt={`${project.title} - Image ${currentImageIndex + 1}`}
-            fill
-            className="object-cover"
-          />
-          {project.images.length > 1 && (
-            <>
-              {/* <button
-                onClick={handlePrevImage}
-                className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-black/50 text-white p-2 rounded-full hover:bg-black/70"
-              >
-                <ChevronLeft className="h-6 w-6" />
-              </button>
-              <button
-                onClick={handleNextImage}
-                className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-black/50 text-white p-2 rounded-full hover:bg-black/70"
-              >
-                <ChevronRight className="h-6 w-6" />
-              </button> */}
-              <div className="absolute bottom-2 left-0 right-0 flex justify-center gap-2">
-                {project.images.map((_, index) => (
-                  <button
-                    key={index}
-                    title={`Show image ${index + 1}`}
-                    aria-label={`Show image ${index + 1}`}
-                    className={`h-2 w-2 rounded-full ${
-                      currentImageIndex === index ? "bg-white" : "bg-gray-500"
-                    }`}
-                    onClick={() => setCurrentImageIndex(index)}
-                  />
-                ))}
-              </div>
-            </>
-          )}
+    <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 pt-[120px]">
+      <div className="bg-gray-900/90 rounded-3xl max-w-7xl w-full p-6 pt-0 relative max-h-[85vh] overflow-y-auto overflow-hidden">
+        <div className="sticky top-0 z-10 bg-gray-900/90 pt-4 pb-2 flex justify-between items-center border-b border-gray-700">
+          <h2 className="text-2xl font-bold text-white">{project.title}</h2>
+          <button
+            onClick={onClose}
+            className="text-gray-400 hover:text-white"
+            aria-label="Close modal"
+          >
+            <X className="h-6 w-6" />
+          </button>
         </div>
-        <h3 className="text-lg font-medium text-white mb-2">Description</h3>
+<div className="flex flex-col justify-center items-center mt-4">
+          <div className="flex flex-row gap-2  mb-4 ">
+            <Carousel
+              plugins={[plugin.current]}
+              className="w-full"
+              onMouseEnter={plugin.current.stop}
+              onMouseLeave={plugin.current.reset}
+            >
+              <CarouselContent className="carousl-conatiner">
+                {project.images.map((image, index) => (
+                  <CarouselItem key={index}>
+                    <div className="relative h-[300px] w-full">
+                      <Image
+                        src={image}
+                        alt={`${project.title} - Image ${index + 1}`}
+                        fill
+                        className="object-cover rounded-lg"
+                      />
+                    </div>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+              <CarouselPrevious />
+              <CarouselNext />
+            </Carousel>
+          </div>
+        </div>
+        <h3 className="text-lg font-medium text-white mb-2 mt-4">
+          Description
+        </h3>
         <p className="text-gray-300 mb-4">{project.description}</p>
-        <h3 className="text-lg font-medium text-white mb-2">Development Process</h3>
+        <h3 className="text-lg font-medium text-white mb-2">
+          Development Process
+        </h3>
         <p className="text-gray-300 mb-4">{project.process}</p>
-        <h3 className="text-lg font-medium text-white mb-2">Technologies Used</h3>
+        <h3 className="text-lg font-medium text-white mb-2">
+          Technologies Used
+        </h3>
         <div className="flex flex-wrap gap-2 mb-4">
           {project.technologies.map((tech, index) => (
-            <span key={index} className="px-2 py-1 bg-purple-500/20 text-purple-400 rounded-full text-xs">
+            <span
+              key={index}
+              className="px-2 py-1 bg-purple-500/20 text-purple-400 rounded-full text-xs"
+            >
               {tech}
             </span>
           ))}
@@ -110,7 +114,8 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
         <Button className="btn-primary w-full sm:w-auto" onClick={onClose}>
           Close
         </Button>
+        
       </div>
     </div>
-  )
+  );
 }
