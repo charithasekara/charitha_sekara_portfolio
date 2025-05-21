@@ -1,0 +1,128 @@
+[
+      {
+    "id": 0,
+    "title": "Nathan Portfolio",
+    "category": "Portfolio",
+    "imageSrc": "/images/nathan-portfolio/image1.jpg",
+    "images": [
+      "/images/nathan-portfolio/image1.jpg",
+      "/images/nathan-portfolio/image2.jpg",
+      "/images/nathan-portfolio/image3.jpg"
+    ],
+    "description": "A modern portfolio website showcasing a developer's work with a sleek dark theme and interactive elements.",
+    "process": "The project began with wireframing in Figma to design a user-friendly layout. Next.js was chosen for its SSR capabilities, paired with Tailwind CSS for rapid styling. Framer Motion was used for animations. Iterative testing ensured cross-device compatibility and performance optimization.",
+    "technologies": ["Next.js", "Tailwind CSS", "Framer Motion"],
+    "features": [
+      "Responsive design optimized for all devices",
+      "Dynamic animations for enhanced user engagement",
+      "SEO-friendly structure for better visibility",
+      "Fast loading times with Next.js optimization"
+    ],
+    "githubLink": "https://github.com/username/nathan-portfolio"
+  },
+  {
+    "id": 1,
+    "title": "Nathan Portfolio",
+    "category": "Portfolio",
+    "imageSrc": "/images/nathan-portfolio/image1.jpg",
+    "images": [
+      "/images/nathan-portfolio/image1.jpg",
+      "/images/nathan-portfolio/image2.jpg",
+      "/images/nathan-portfolio/image3.jpg"
+    ],
+    "description": "A modern portfolio website showcasing a developer's work with a sleek dark theme and interactive elements.",
+    "process": "The project began with wireframing in Figma to design a user-friendly layout. Next.js was chosen for its SSR capabilities, paired with Tailwind CSS for rapid styling. Framer Motion was used for animations. Iterative testing ensured cross-device compatibility and performance optimization.",
+    "technologies": ["Next.js", "Tailwind CSS", "Framer Motion"],
+    "features": [
+      "Responsive design optimized for all devices",
+      "Dynamic animations for enhanced user engagement",
+      "SEO-friendly structure for better visibility",
+      "Fast loading times with Next.js optimization"
+    ],
+    "githubLink": "https://github.com/username/nathan-portfolio"
+  },
+  {
+    "id": 2,
+    "title": "StyleLoom Ecommerce",
+    "category": "Ecommerce",
+    "imageSrc": "/images/styleloom-ecommerce/image1.jpg",
+    "images": [
+      "/images/styleloom-ecommerce/image1.jpg",
+      "/images/styleloom-ecommerce/image2.jpg",
+      "/images/styleloom-ecommerce/image3.jpg"
+    ],
+    "description": "An ecommerce platform with a user-friendly interface, secure payment integration, and robust product management.",
+    "process": "The development process involved setting up a headless commerce architecture using React and Node.js. Stripe was integrated for payments, and a custom CMS was built for product management. Extensive user testing ensured a seamless shopping experience.",
+    "technologies": ["React", "Node.js", "Stripe"],
+    "features": [
+      "Secure payment processing",
+      "Product filtering and search",
+      "Responsive design",
+      "User authentication"
+    ],
+    "githubLink": "https://github.com/username/styleloom-ecommerce"
+  },
+  {
+    "id": 3,
+    "title": "NexGen Agency",
+    "category": "Agency",
+    "imageSrc": "/images/nexgen-agency/image1.jpg",
+    "images": [
+      "/images/nexgen-agency/image1.jpg",
+      "/images/nexgen-agency/image2.jpg",
+      "/images/nexgen-agency/image3.jpg"
+    ],
+    "description": "A professional agency website showcasing creative services with stunning visuals and client engagement tools.",
+    "process": "Designed with a focus on visual storytelling, the project used Next.js for performance and GSAP for animations. Client feedback was incorporated through multiple iterations to ensure brand alignment.",
+    "technologies": ["Next.js", "Tailwind CSS", "GSAP"],
+    "features": [
+      "Interactive landing page",
+      "Client testimonial section",
+      "Portfolio showcase",
+      "Contact form integration"
+    ],
+    "githubLink": "https://github.com/username/nexgen-agency"
+  },
+  {
+    "id": 4,
+    "title": "DevCraft Portfolio",
+    "category": "Portfolio",
+    "imageSrc": "/images/devcraft-portfolio/image1.jpg",
+    "images": [
+      "/images/devcraft-portfolio/image1.jpg",
+      "/images/devcraft-portfolio/image2.jpg",
+      "/images/devcraft-portfolio/image3.jpg"
+    ],
+    "description": "A developer portfolio highlighting technical expertise with a clean and modern design.",
+    "process": "Built using React for component-based architecture and Tailwind CSS for styling. Vercel was used for deployment, with a focus on simplicity and performance. A blog section was added using a static site generator.",
+    "technologies": ["React", "Tailwind CSS", "Vercel"],
+    "features": [
+      "Project showcase grid",
+      "Smooth scroll animations",
+      "Responsive layouts",
+      "Blog integration"
+    ],
+    "githubLink": "https://github.com/username/devcraft-portfolio"
+  },
+  {
+    "id": 5,
+    "title": "Currentvandi Business",
+    "category": "Business",
+    "imageSrc": "/images/currentvandi-business/image1.jpg",
+    "images": [
+      "/images/currentvandi-business/image1.jpg",
+      "/images/currentvandi-business/image2.jpg",
+      "/images/currentvandi-business/image3.jpg"
+    ],
+    "description": "A business-oriented website designed to promote services and drive customer engagement.",
+    "process": "Developed using Next.js and TypeScript for type safety. Tailwind CSS ensured consistent styling, and analytics were integrated to track user behavior. SEO optimization was a key focus to drive organic traffic.",
+    "technologies": ["Next.js", "TypeScript", "Tailwind CSS"],
+    "features": [
+      "Lead generation forms",
+      "Service catalog",
+      "SEO optimization",
+      "Analytics integration"
+    ],
+    "githubLink": "https://github.com/username/currentvandi-business"
+  }
+]

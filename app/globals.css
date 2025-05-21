@@ -86,8 +86,6 @@
   -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
   mask-composite: exclude;
   animation: border-rotate 4s linear infinite;
@@ -121,6 +119,7 @@
   );
   background-size: 300% 100%;
   -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
   mask-composite: exclude;
   animation: border-rotate 4s linear infinite;
@@ -164,6 +163,7 @@
   padding: 1px;
   /* background: linear-gradient(to right, transparent, rgba(34, 5, 104, 0.986), rgba(6, 1, 19, 0.795)); */
   -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
   mask-composite: exclude;
   pointer-events: none;
@@ -197,7 +197,11 @@
 @media (hover: hover) {
   .bento-card:hover {
     transform: translateY(-2px) scale(1.01);
-    background: linear-gradient(135deg, rgba(40, 40, 60, 0.9), rgba(30, 30, 50, 0.9));
+    background: linear-gradient(
+      135deg,
+      rgba(40, 40, 60, 0.9),
+      rgba(30, 30, 50, 0.9)
+    );
   }
 }
 
@@ -244,9 +248,12 @@
 }
 
 .btn-outline {
-  @apply border border-purple-500 text-purple-500 hover:bg-purple-500/10 px-4 py-2 rounded-full transition-all hover:scale-105;
+  @apply bg-transparent border-purple-700 text-white border-4 hover:bg-purple-500/10 px-4 py-2 rounded-full transition-all hover:scale-105;
 }
 
+.btn-icon {
+  @apply  border-purple-900 text-white border-4 hover:bg-purple-700 px-4 py-2 rounded-full transition-all hover:scale-105;
+}
 /* Glass effect for cards */
 .glass-card {
   -webkit-backdrop-filter: blur(12px);
@@ -331,11 +338,6 @@
   /* background-color: rgb(14, 14, 14); */
 }
 
-/* Fix for project cards */
-.project-card-content {
-  text-align: left;
-}
-
 /* Fix for service cards */
 .service-card-content {
   text-align: left;
@@ -346,11 +348,11 @@
   text-align: left;
 }
 
-.feature-card{
-  min-height:300px !important;
+.feature-card {
+  min-height: 300px !important;
 }
 
-.TextGradient{
+.TextGradient {
   background: linear-gradient(270deg, rgb(66, 66, 66), rgb(255, 255, 255));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -359,8 +361,12 @@
 
 /* Existing scroll animation */
 @keyframes scroll {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }
 
 .animate-scroll {
@@ -374,9 +380,15 @@
 
 /* New fade animation for project cards */
 @keyframes fade {
-  0% { opacity: 0.7; }
-  50% { opacity: 1; }
-  100% { opacity: 0.7; }
+  0% {
+    opacity: 0.7;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.7;
+  }
 }
 
 .animate-fade {
@@ -386,8 +398,12 @@
 
 /* Right scroll animation (Row 2) */
 @keyframes scrollReverse {
-  0% { transform: translateX(-50%); }
-  100% { transform: translateX(0); }
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0);
+  }
 }
 
 .animate-scroll-reverse {
@@ -397,4 +413,69 @@
 
 .animate-scroll-reverse:hover {
   animation-play-state: paused;
+}
+
+.project-full-container{
+ border-radius: 1.75rem;
+  background: linear-gradient(135deg, rgba(30, 30, 40, 0.9), rgba(20, 0, 56, 0.9));
+padding: 1rem;
+}
+
+.project-showcase-card {
+  display: grid;
+  gap: 1rem;
+  
+ 
+  /* Mobile first: 1 column */
+  grid-template-rows: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+/* Large screens (optional) */
+@media (max-width: 768px) {
+  .project-showcase-card {
+      grid-template-rows: repeat(1, minmax(0, 1fr));
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+}
+
+/* Optional styling for the individual cards */
+.project-page-card {
+  min-height: 236px;
+
+  @media screen and (max-width: 768px) {
+    min-height: 300px;
+    
+  }
+}
+
+/* Fix for project cards */
+.project-card-content {
+  text-align: left;
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+  padding: 1rem;
+  border-radius: 1.75rem;
+  background: linear-gradient(
+    135deg,
+    rgba(30, 30, 40, 0.9),
+    rgba(20, 0, 56, 0.9)
+  );
+  /* border: 1px solid rgba(255, 255, 255, 0.1); */
+  transition: all 0.3s ease;
+  height: 100%;
+
+  /* Add hover effect */
+  &:hover {
+    transform: translateY(-2px) scale(1.01);
+    background: linear-gradient(
+      135deg,
+      rgba(30, 30, 40, 0.9),
+      rgba(20, 0, 56, 0.9)
+    );
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
 }

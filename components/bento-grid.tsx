@@ -26,7 +26,7 @@ interface BentoCardProps {
   children: React.ReactNode
   className?: string
   colSpan?: 1 | 2 | 3 | 4 | 5 | 6
-  rowSpan?: 1 | 2 | 3
+  rowSpan?: 1 | 2 | 3 | 4 
   hasPersistentHover?: boolean
   variant?: "default" | "featured" | "minimal"
 }
@@ -53,6 +53,7 @@ export function BentoCard({
     1: "row-span-1",
     2: "row-span-2",
     3: "row-span-3",
+    4: "row-span-4",
   }[rowSpan]
 
   const variantClass = {

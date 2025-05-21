@@ -298,76 +298,82 @@ export default function AboutPage() {
         </BentoCard>
 
         {/* Card 7: Hobbies */}
-        <BentoCard colSpan={1} rowSpan={1} variant="minimal">
-          <div className="flex flex-row gap-2 items-center justify-center">
-            <SmilePlus className="h-4 w-4 text-purple-500" />
-            <p className="text-xs text-gray-400">Hobbies</p>
-          </div>
-          <h3 className="text-lg mt-2 font-medium text-white flex justify-center">
-            More Details
-          </h3>
-          <div className="flex flex-col gap-2 w-full max-w-2xl my-3 mb-4 -mx-[157px] ">
-            {/* Row 1 */}
-            <div className="flex animate-scroll whitespace-nowrap">
-              <span className="count-label flex items-center gap-2 border border-stone-500 p-1 rounded-md px-2 bg-purple-500/20 text-white mx-2">
-                <PaintbrushVertical className="h-4 w-4 text-purple-500" />
-                Painting
-              </span>
-              <span className="count-label flex items-center gap-2 border border-stone-500 p-1 rounded-md px-2 bg-purple-500/20 text-white mx-2">
-                <Book className="h-4 w-4 text-purple-500" />
-                Reading
-              </span>
-              <span className="count-label flex items-center gap-2 border border-stone-500 p-1 rounded-md px-2 bg-purple-500/20 text-white mx-2">
-                <MapPinPlusInside className="h-4 w-4 text-purple-500" />
-                Traveling
-              </span>
-              {/* Duplicate for seamless looping */}
-              <span className="count-label flex items-center gap-2 border border-stone-500 p-1 rounded-md px-2 bg-purple-500/20 text-white mx-2">
-                <PaintbrushVertical className="h-4 w-4 text-purple-500" />
-                Painting
-              </span>
-              <span className="count-label flex items-center gap-2 border border-stone-500 p-1 rounded-md px-2 bg-purple-500/20 text-white mx-2">
-                <Book className="h-4 w-4 text-purple-500" />
-                Reading
-              </span>
-              <span className="count-label flex items-center gap-2 border border-stone-500 p-1 rounded-md px-2 bg-purple-500/20 text-white mx-2">
-                <MapPinPlusInside className="h-4 w-4 text-purple-500" />
-                Traveling
-              </span>
+        <BentoCard colSpan={1} rowSpan={1} className="hobby-card ">
+          <div className="hobby-card flex flex-col items-center justify-center h-full group ">
+            <div className="flex flex-row gap-2 items-center justify-center">
+              <SmilePlus className="h-4 w-4 text-purple-500" />
+              <p className="text-xs text-gray-400">Hobbies</p>
             </div>
-            {/* Row 2 */}
-            <div className="flex animate-scroll-reverse whitespace-nowrap">
-              <span className="count-label flex items-center gap-2 border border-stone-500 p-1 rounded-md px-2 bg-purple-500/20 text-white mx-2">
-                <Code className="h-4 w-4 text-purple-500" />
-                Coding
-              </span>
-              <span className="count-label flex items-center gap-2 border border-stone-500 p-1 rounded-md px-2 bg-purple-500/20 text-white mx-2">
-                <CookingPot className="h-4 w-4 text-purple-500" />
-                Coocking
-              </span>
-              <span className="count-label flex items-center gap-2 border border-stone-500 p-1 rounded-md px-2 bg-purple-500/20 text-white mx-2">
-                <BookOpenCheck className="h-4 w-4 text-purple-500" />
-                Writing
-              </span>
-              {/* Duplicate for seamless looping */}
-              <span className="count-label flex items-center gap-2 border border-stone-500 p-1 rounded-md px-2 bg-purple-500/20 text-white mx-2">
-                <Code className="h-4 w-4 text-purple-500" />
-                Coding
-              </span>
-              <span className="count-label flex items-center gap-2 border border-stone-500 p-1 rounded-md px-2 bg-purple-500/20 text-white mx-2">
-                <CookingPot className="h-4 w-4 text-purple-500" />
-                Coocking
-              </span>
-              <span className="count-label flex items-center gap-2 border border-stone-500 p-1 rounded-md px-2 bg-purple-500/20 text-white mx-2">
-                <BookOpenCheck className="h-4 w-4 text-purple-500" />
-                Writing
-              </span>
+            <h3 className="text-lg mt-2 font-medium text-white flex justify-center">
+              Life Style
+            </h3>
+            <div className="flex flex-col gap-2 w-full max-w-2xl my-3 mb-4 -mx-[157px] ">
+              {/* Row 1 */}
+              <div className="flex animate-scroll whitespace-nowrap">
+                <span className="count-label flex items-center gap-2 border border-stone-500 p-1 rounded-md px-2 bg-purple-500/20 text-white mx-2">
+                  <PaintbrushVertical className="h-4 w-4 text-purple-500" />
+                  Painting
+                </span>
+                <span className="count-label flex items-center gap-2 border border-stone-500 p-1 rounded-md px-2 bg-purple-500/20 text-white mx-2">
+                  <Book className="h-4 w-4 text-purple-500" />
+                  Reading
+                </span>
+                <span className="count-label flex items-center gap-2 border border-stone-500 p-1 rounded-md px-2 bg-purple-500/20 text-white mx-2">
+                  <MapPinPlusInside className="h-4 w-4 text-purple-500" />
+                  Traveling
+                </span>
+                {/* Duplicate for seamless looping */}
+                <span className="count-label flex items-center gap-2 border border-stone-500 p-1 rounded-md px-2 bg-purple-500/20 text-white mx-2">
+                  <PaintbrushVertical className="h-4 w-4 text-purple-500" />
+                  Painting
+                </span>
+                <span className="count-label flex items-center gap-2 border border-stone-500 p-1 rounded-md px-2 bg-purple-500/20 text-white mx-2">
+                  <Book className="h-4 w-4 text-purple-500" />
+                  Reading
+                </span>
+                <span className="count-label flex items-center gap-2 border border-stone-500 p-1 rounded-md px-2 bg-purple-500/20 text-white mx-2">
+                  <MapPinPlusInside className="h-4 w-4 text-purple-500" />
+                  Traveling
+                </span>
+              </div>
+              {/* Row 2 */}
+              <div className="flex animate-scroll-reverse whitespace-nowrap">
+                <span className="count-label flex items-center gap-2 border border-stone-500 p-1 rounded-md px-2 bg-purple-500/20 text-white mx-2">
+                  <Code className="h-4 w-4 text-purple-500" />
+                  Coding
+                </span>
+                <span className="count-label flex items-center gap-2 border border-stone-500 p-1 rounded-md px-2 bg-purple-500/20 text-white mx-2">
+                  <CookingPot className="h-4 w-4 text-purple-500" />
+                  Coocking
+                </span>
+                <span className="count-label flex items-center gap-2 border border-stone-500 p-1 rounded-md px-2 bg-purple-500/20 text-white mx-2">
+                  <BookOpenCheck className="h-4 w-4 text-purple-500" />
+                  Writing
+                </span>
+                {/* Duplicate for seamless looping */}
+                <span className="count-label flex items-center gap-2 border border-stone-500 p-1 rounded-md px-2 bg-purple-500/20 text-white mx-2">
+                  <Code className="h-4 w-4 text-purple-500" />
+                  Coding
+                </span>
+                <span className="count-label flex items-center gap-2 border border-stone-500 p-1 rounded-md px-2 bg-purple-500/20 text-white mx-2">
+                  <CookingPot className="h-4 w-4 text-purple-500" />
+                  Coocking
+                </span>
+                <span className="count-label flex items-center gap-2 border border-stone-500 p-1 rounded-md px-2 bg-purple-500/20 text-white mx-2">
+                  <BookOpenCheck className="h-4 w-4 text-purple-500" />
+                  Writing
+                </span>
+              </div>
             </div>
           </div>
         </BentoCard>
 
         {/* Card 8: Achievements */}
-        <BentoCard colSpan={1} rowSpan={1}>
+        <BentoCard
+          colSpan={1}
+          rowSpan={1}
+          className="hackthon-Card md:col-span-2"
+        >
           <div className="flex flex-col justify-center items-center gap-3 mb-3">
             <div className="w-10 h-10 rounded-lg flex items-center justify-center bg-purple-400/20 text-gray-50">
               <Braces className="h-5 w-5" />
@@ -403,7 +409,7 @@ export default function AboutPage() {
               </h3>
             </div>
           </div>
-          
+
           <div className="flex items-start gap-3 border-stone-500 p-1 rounded-xl py-2 px-2 bg-purple-500/20 text-purple-500">
             <div className="p-1 rounded-md bg-purple-400/20 text-purple-400">
               <ShieldCheck className="h-4 w-4" />
@@ -412,7 +418,9 @@ export default function AboutPage() {
               <p className="text-sm text-gray-200 text-bold font-medium">
                 IEEE Student Branch | SUSL
               </p>
-              <p className="text-xs mt-1 text-gray-400 font-medium">Past Member</p>
+              <p className="text-xs mt-1 text-gray-400 font-medium">
+                Past Member
+              </p>
             </div>
           </div>
 
@@ -427,7 +435,6 @@ export default function AboutPage() {
               <p className="text-xs text-gray-400 font-medium">Past Member</p>
             </div>
           </div> */}
-          
         </BentoCard>
 
         {/* Card 9: Fun Fact */}
