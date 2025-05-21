@@ -133,7 +133,7 @@ export default function Home() {
           <BentoCard colSpan={1} rowSpan={1}>
             <div className="flex flex-col items-center justify-center h-full">
               <CountUp
-                end={56}
+                end={20}
                 labelText="Projects"
                 labelIcon={<Briefcase className="w-4 h-4" />}
                 className="TextGradient"
