@@ -36,9 +36,9 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
 
   return (
     <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 pt-[120px]">
-      <div className="bg-gray-900/90 rounded-3xl max-w-7xl w-full p-6 pt-0 relative max-h-[85vh] overflow-y-auto overflow-hidden">
-        <div className="sticky top-0 z-10 bg-gray-900/90 pt-4 pb-2 flex justify-between items-center border-b border-gray-700">
-          <h2 className="text-2xl font-bold text-white">{project.title}</h2>
+      <div className="bg-gray-950 rounded-3xl max-w-7xl w-full p-6 pt-0 relative max-h-[85vh] overflow-y-auto overflow-hidden">
+        <div className="sticky top-0 z-10 bg-gray-950 pt-4 pb-2 flex justify-between items-center border-b border-gray-700">
+          <h2 className="text-2xl font-bold text-white py-2">{project.title}</h2>
           <button
             onClick={onClose}
             className="text-gray-400 hover:text-white"
@@ -47,15 +47,20 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
             <X className="h-6 w-6" />
           </button>
         </div>
-<div className="flex flex-col justify-center items-center mt-4">
+        <div className="flex flex-col justify-center items-center carousel-box p-2">
           <div className="flex flex-row gap-2  mb-4 ">
             <Carousel
+              opts={{
+                loop: true,
+                align: "center",
+                slidesToScroll: 1,
+              }}
               plugins={[plugin.current]}
               className="w-full"
               onMouseEnter={plugin.current.stop}
               onMouseLeave={plugin.current.reset}
             >
-              <CarouselContent className="carousl-conatiner">
+              <CarouselContent className="carousl-container">
                 {project.images.map((image, index) => (
                   <CarouselItem key={index}>
                     <div className="relative h-[300px] w-full">
@@ -102,19 +107,17 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
           ))}
         </ul>
         <h3 className="text-lg font-medium text-white mb-2">Source Code</h3>
-        <Link
-          href={project.githubLink}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center text-purple-400 hover:text-purple-300 mb-4"
-        >
-          <Github className="h-5 w-5 mr-2" />
-          View on GitHub
-        </Link>
-        <Button className="btn-primary w-full sm:w-auto" onClick={onClose}>
-          Close
+        <Button className="btn-primary text-white " onClick={onClose}>
+          <Link
+            href={project.githubLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center"
+          >
+            <Github className="h-5 w-5 mr-2" />
+            View on GitHub
+          </Link>
         </Button>
-        
       </div>
     </div>
   );

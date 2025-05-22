@@ -1,22 +1,23 @@
 [
       {
     "id": 0,
-    "title": "Nathan Portfolio",
-    "category": "Portfolio",
-    "imageSrc": "/images/nathan-portfolio/image1.jpg",
+    "title": "Decision Logging Application",
+    "category": "Personal",
+    "imageSrc": "/p1c.png",
     "images": [
-      "/images/nathan-portfolio/image1.jpg",
-      "/images/nathan-portfolio/image2.jpg",
-      "/images/nathan-portfolio/image3.jpg"
+      "/deci-img/1p0.png",
+      "/deci-img/1p1.png",
+      "/deci-img/1p2.png"
     ],
-    "description": "A modern portfolio website showcasing a developer's work with a sleek dark theme and interactive elements.",
-    "process": "The project began with wireframing in Figma to design a user-friendly layout. Next.js was chosen for its SSR capabilities, paired with Tailwind CSS for rapid styling. Framer Motion was used for animations. Iterative testing ensured cross-device compatibility and performance optimization.",
-    "technologies": ["Next.js", "Tailwind CSS", "Framer Motion"],
+    "description": "A decision logging application that allows users to document and track their decisions over time, providing insights into decision-making patterns.",
+    "process": "The project started with a user research phase to understand the needs of potential users. Wireframes were created in Figma, followed by development using React and Node.js. The application was built with a focus on user experience and data visualization.",
+    "technologies": ["Next.js", "Tailwind CSS", "Framer Motion", "Express", "MongoDB"],
     "features": [
-      "Responsive design optimized for all devices",
-      "Dynamic animations for enhanced user engagement",
-      "SEO-friendly structure for better visibility",
-      "Fast loading times with Next.js optimization"
+      "Decisions logging and tracking",
+      "Decisions history and analytics",
+      "Decisons Edit, Delete, View functions",
+      "Decision categorization and tagging",
+      "Data visualization for decision trends"
     ],
     "githubLink": "https://github.com/username/nathan-portfolio"
   },

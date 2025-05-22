@@ -16,6 +16,7 @@ import {
   ArrowRight,
   Phone,
   CodeXml,
+  FolderGit2,
 } from "lucide-react";
 import ProjectModal from "@/components/project-modal";
 import projects from "@/data/projects.json";
@@ -46,11 +47,11 @@ export default function ProjectsPage() {
           {/* Card 1: Featured Project */}
           <div className="flex flex-col md:col-span-4 row-span-3  sm:col-span-1 h-full gap-2 project-full-container">
             <div className="flex flex-row gap-2 items-center justify-center">
-              <CodeXml className="h-4 w-4 text-purple-500" />
-              <p className="text-xs text-gray-400">My Stacks</p>
+              <FolderGit2 className="h-4 w-4 text-purple-500" />
+              <p className="text-xs text-gray-400">My Projects</p>
             </div>
             <h3 className="text-lg mt-2 font-medium text-white flex justify-center">
-              Tech Arsenal
+              Project Gallery
             </h3>
             <div className="project-showcase-card ">
               <ProjectCard
