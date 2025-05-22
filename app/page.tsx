@@ -40,25 +40,14 @@ import {
   Sparkles,
   Wand,
 } from "lucide-react";
-import ProjectCard from "@/components/project-card";
+
+import ProjectImage from "@/components/project-image";
 
 const projects = [
-  {
-    imageSrc: "/placeholder.svg?height=400&width=600",
-    href: "/projects/1",
-  },
-  {
-    imageSrc: "/placeholder.svg?height=400&width=600",
-    href: "/projects/2",
-  },
-  {
-    imageSrc: "/placeholder.svg?height=400&width=600",
-    href: "/projects/3",
-  },
-  {
-    imageSrc: "/placeholder.svg?height=400&width=600",
-    href: "/projects/4",
-  },
+ { imageSrc: '/pimg1.png', href: '/project1' },
+ { imageSrc: '/pimg2.png', href: '/project1' },
+ { imageSrc: '/pimg1.png', href: '/project1' },
+ { imageSrc: '/pimg2.png', href: '/project1' },
 ];
 
 export default function Home() {
@@ -109,10 +98,15 @@ export default function Home() {
                 transition={{ duration: 0.5, delay: 0.2 }}
                 className="flex justify-center lg:justify-start"
               >
-                <Button className="btn-primary">
+                <Link
+                href="/about"
+                className="text-purple-400 text-sm flex items-center group"
+              >
+                <Button className="btn-primary group-hover:scale-105 transition-transform duration-300">
                   Explore My Work
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
+              </Link>
               </motion.div>
             </div>
           </div>
@@ -254,37 +248,20 @@ export default function Home() {
             >
               <div className="flex animate-scroll whitespace-nowrap absolute z-0 h-full">
                 {projects.map((project, index) => (
-                  <ProjectCard
-                    key={index}
-                    // title={project.title}
-                    // category={project.category}
-                    imageSrc={project.imageSrc}
-                    href={project.href}
-                    className="inline-block min-w-[150px] max-w-[150px] mx-4 animate-fade"
-                  />
-                ))}
-                {/* Duplicate items for seamless looping */}
-                {projects.map((project, index) => (
-                  <ProjectCard
-                    key={`dup-${index}`}
-                    // title={project.title}
-                    // category={project.category}
-                    imageSrc={project.imageSrc}
-                    href={project.href}
-                    className="inline-block min-w-[150px] max-w-[300px] mx-4 animate-fade"
-                  />
-                ))}
-
-                 {projects.map((project, index) => (
-                  <ProjectCard
-                    key={`dup-${index}`}
-                    // title={project.title}
-                    // category={project.category}
-                    imageSrc={project.imageSrc}
-                    href={project.href}
-                    className="inline-block min-w-[150px] max-w-[300px] mx-4 animate-fade"
-                  />
-                ))}
+                  <ProjectImage
+            key={index}
+            imageSrc={project.imageSrc}
+            href={project.href}
+          />
+        ))}
+        {/* Duplicate items for seamless looping */}
+        {projects.map((project, index) => (
+          <ProjectImage
+            key={`duplicate-${index}`}
+            imageSrc={project.imageSrc}
+            href={project.href}
+          />
+        ))}
               </div>
             </div>
             {/* View Projects Button with animation */}
@@ -399,7 +376,7 @@ export default function Home() {
             </div>
             <p className="text-xs text-gray-400 flex items-center justify-center">
               <Button className="btn-primary">
-                View Profile
+                View Skills
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
             </p>
