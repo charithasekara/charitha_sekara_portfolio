@@ -149,7 +149,7 @@ export default function Home() {
           >
             <div className="flex flex-col items-center justify-center h-full">
               <CountUp
-                end={6}
+                end={3}
                 labelText="Years Experience"
                 labelIcon={<Clock className="w-4 h-4" />}
                 className="TextGradient"
@@ -201,6 +201,14 @@ export default function Home() {
             <div className="flex items-center gap-3 border border-stone-500 p-1 rounded-xl pl-1 px-2 bg-purple-500/20 text-white">
               <Code className="h-6 w-6  p-1 rounded-md bg-purple-400/20 text-white" />
               <p className="text-sm text-gray-300 font-medium">Implement</p>
+            </div>
+            <div className="flex items-center gap-3 border border-stone-500 p-1 rounded-xl pl-1 px-2 bg-purple-500/20 text-white">
+              <Code className="h-6 w-6  p-1 rounded-md bg-purple-400/20 text-white" />
+              <p className="text-sm text-gray-300 font-medium">Launch</p>
+            </div>
+            <div className="flex items-center gap-3 border border-stone-500 p-1 rounded-xl pl-1 px-2 bg-purple-500/20 text-white">
+              <Code className="h-6 w-6  p-1 rounded-md bg-purple-400/20 text-white" />
+              <p className="text-sm text-gray-300 font-medium">Feedback</p>
             </div>
           </div>
         </BentoCard>

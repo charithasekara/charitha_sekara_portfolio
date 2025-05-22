@@ -50,9 +50,9 @@ export default function Navbar() {
                 {link.name}
               </Link>
             ))}
-            <div className="ml-4">
+            {/* <div className="ml-4">
               <ThemeToggle />
-            </div>
+            </div> */}
           </div>
 
           {/* Mobile Navigation Toggle */}
