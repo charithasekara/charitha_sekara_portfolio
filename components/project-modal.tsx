@@ -36,8 +36,8 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
 
   return (
     <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 pt-[120px]">
-      <div className="bg-gray-950 rounded-3xl max-w-7xl w-full p-6 pt-0 relative max-h-[85vh] overflow-y-auto overflow-hidden">
-        <div className="sticky top-0 z-10 bg-gray-950 pt-4 pb-2 flex justify-between items-center border-b border-gray-700">
+      <div className="bg-gray-900 rounded-3xl max-w-7xl w-full p-6 pt-0 relative max-h-[85vh] overflow-y-auto overflow-hidden">
+        <div className="sticky top-0 z-10 bg-gray-900 pt-4 pb-2 flex justify-between items-center border-b border-gray-700">
           <h2 className="text-2xl font-bold text-white py-2">{project.title}</h2>
           <button
             onClick={onClose}
@@ -48,7 +48,7 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
           </button>
         </div>
         <div className="flex flex-col justify-center items-center carousel-box p-2">
-          <div className="flex flex-row gap-2  mb-4 ">
+          <div className="flex flex-row gap-2  mb-4 carousel-container ">
             <Carousel
               opts={{
                 loop: true,

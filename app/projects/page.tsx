@@ -62,18 +62,18 @@ export default function ProjectsPage() {
                 onViewDetails={() => openModal(projects[0])}
               />
               <ProjectCard
-                title={projects[0].title}
-                category={projects[0].category}
-                imageSrc={projects[0].imageSrc}
+                title={projects[1].title}
+                category={projects[1].category}
+                imageSrc={projects[1].imageSrc}
                 className="project-page-card"
-                onViewDetails={() => openModal(projects[0])}
+                onViewDetails={() => openModal(projects[1])}
               />
               <ProjectCard
-                title={projects[0].title}
-                category={projects[0].category}
-                imageSrc={projects[0].imageSrc}
+                title={projects[2].title}
+                category={projects[2].category}
+                imageSrc={projects[2].imageSrc}
                 className="project-page-card"
-                onViewDetails={() => openModal(projects[0])}
+                onViewDetails={() => openModal(projects[2])}
               />
               <ProjectCard
                 title={projects[0].title}
