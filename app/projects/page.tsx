@@ -174,7 +174,7 @@ export default function ProjectsPage() {
           </BentoCard>
 
           {/* Card 12: Project Management */}
-          <BentoCard colSpan={2} rowSpan={1} variant="minimal">
+          {/* <BentoCard colSpan={2} rowSpan={1} variant="minimal">
             <div className="flex items-center justify-center h-full text-center">
               <div className="flex flex-col items-center">
                 <div className="w-12 h-12 rounded-full bg-purple-500/20 text-purple-500 flex items-center justify-center mb-2">
@@ -188,7 +188,7 @@ export default function ProjectsPage() {
                 </p>
               </div>
             </div>
-          </BentoCard>
+          </BentoCard> */}
 
           {/* Card 13: Contact CTA */}
           <BentoCard colSpan={6} rowSpan={1} variant="featured">
