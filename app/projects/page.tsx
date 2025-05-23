@@ -76,11 +76,11 @@ export default function ProjectsPage() {
                 onViewDetails={() => openModal(projects[2])}
               />
               <ProjectCard
-                title={projects[0].title}
-                category={projects[0].category}
-                imageSrc={projects[0].imageSrc}
+                title={projects[3].title}
+                category={projects[3].category}
+                imageSrc={projects[3].imageSrc}
                 className="project-page-card"
-                onViewDetails={() => openModal(projects[0])}
+                onViewDetails={() => openModal(projects[3])}
               />
             </div>
           </div>

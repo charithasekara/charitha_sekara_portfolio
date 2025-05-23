@@ -69,14 +69,15 @@
   },
   {
     "id": 3,
-    "title": "NexGen Agency",
-    "category": "Agency",
-    "imageSrc": "/images/nexgen-agency/image1.jpg",
+    "title": "Abandon People Management System",  
+    "category": "Design | Development",
+    "imageSrc": "/p4c.png",
     "images": [
-      "/images/nexgen-agency/image1.jpg",
-      "/images/nexgen-agency/image2.jpg",
-      "/images/nexgen-agency/image3.jpg"
+      "/relife/4p0.png",
+      "/relife/4p1.png",
+      "/relife/4p2.png"
     ],
+   
     "description": "A professional agency website showcasing creative services with stunning visuals and client engagement tools.",
     "process": "Designed with a focus on visual storytelling, the project used Next.js for performance and GSAP for animations. Client feedback was incorporated through multiple iterations to ensure brand alignment.",
     "technologies": ["Next.js", "Tailwind CSS", "GSAP"],
