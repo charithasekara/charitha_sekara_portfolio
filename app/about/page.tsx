@@ -565,7 +565,7 @@ export default function AboutPage() {
             </div>
             <Button className="btn-primary">
               View Profile
-              <ArrowRight className="ml-2 h-4 w-4" />
+             
             </Button>
           </Link>
         </BentoCard>

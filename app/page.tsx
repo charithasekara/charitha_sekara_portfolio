@@ -42,6 +42,7 @@ import {
 } from "lucide-react";
 
 import ProjectImage from "@/components/project-image";
+import { AuroraText } from "@/components/aurora-text";
 
 const projects = [
  { imageSrc: '/pimg1.png', href: '/project1' },
@@ -82,7 +83,9 @@ export default function Home() {
                   bg-clip-text text-transparent TextGradient
                 "
               >
+                <AuroraText>
                 Charitha Weerasekara
+                </AuroraText>
               </motion.h1>
               <motion.p
                 initial={{ opacity: 0, y: 20 }}
@@ -104,7 +107,7 @@ export default function Home() {
               >
                 <Button className="btn-primary group-hover:scale-105 transition-transform duration-300">
                   Explore My Work
-                  <ArrowRight className="ml-2 h-4 w-4" />
+                 
                 </Button>
               </Link>
               </motion.div>
@@ -272,7 +275,7 @@ export default function Home() {
               >
                 <Button className="btn-primary group-hover:scale-105 transition-transform duration-300">
                   View Projects
-                  <ArrowRight className="ml-2 h-4 w-4" />
+                 
                 </Button>
               </Link>
             </div>
@@ -377,7 +380,7 @@ export default function Home() {
             <p className="text-xs text-gray-400 flex items-center justify-center">
               <Button className="btn-primary">
                 View Skills
-                <ArrowRight className="ml-2 h-4 w-4" />
+               
               </Button>
             </p>
           </Link>
@@ -463,7 +466,7 @@ export default function Home() {
             <p className="text-xs text-gray-400 flex items-center justify-center">
               <Button className="btn-primary">
                 View Services
-                <ArrowRight className="ml-2 h-4 w-4" />
+               
               </Button>
             </p>
           </Link>
@@ -535,7 +538,7 @@ export default function Home() {
             </div>
             <Button className="btn-primary">
               View Profile
-              <ArrowRight className="ml-2 h-4 w-4" />
+             
             </Button>
           </Link>
         </BentoCard>

@@ -44,7 +44,7 @@ export function BentoShowcase({ title, description, imageSrc, href = "#", classN
               href={href}
               className="inline-flex items-center text-purple-400 hover:text-purple-300 transition-colors"
             >
-              Learn more <ArrowRight className="ml-2 h-4 w-4" />
+              Learn more
             </Link>
           )} */}
         </div>

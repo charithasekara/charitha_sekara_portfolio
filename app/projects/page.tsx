@@ -17,6 +17,7 @@ import {
   Phone,
   CodeXml,
   FolderGit2,
+  Wand,
 } from "lucide-react";
 import ProjectModal from "@/components/project-modal";
 import projects from "@/data/projects.json";
@@ -50,7 +51,7 @@ export default function ProjectsPage() {
               <FolderGit2 className="h-4 w-4 text-purple-500" />
               <p className="text-xs text-gray-400">My Projects</p>
             </div>
-            <h3 className="text-lg mt-2 font-medium text-white flex justify-center">
+            <h3 className="text-lg mt-2 mb-3 font-medium text-white flex justify-center">
               Project Gallery
             </h3>
             <div className="project-showcase-card ">
@@ -91,15 +92,74 @@ export default function ProjectsPage() {
           <BentoCard colSpan={1} rowSpan={1}>
             <div className="flex flex-col items-center justify-center h-full">
               <CountUp
-                end={56}
-                labelText="Projects"
+                end={32}
+                labelText="Designs"
                 labelIcon={<Briefcase className="w-4 h-4" />}
               />
             </div>
           </BentoCard>
 
-          {/* Card 4: Category 1 */}
           <BentoCard colSpan={1} rowSpan={1}>
+            <div className="flex flex-col items-center justify-center h-full">
+              <CountUp
+                end={20}
+                labelText="Developments"
+                labelIcon={<Briefcase className="w-4 h-4" />}
+              />
+            </div>
+          </BentoCard>
+
+          <BentoCard colSpan={1} rowSpan={1}>
+            <div className="flex flex-col items-center justify-center h-full">
+              <CountUp
+                end={10}
+                labelText="Clients"
+                labelIcon={<Briefcase className="w-4 h-4" />}
+              />
+            </div>
+          </BentoCard>
+
+          <BentoCard colSpan={1} rowSpan={1} className="relative">
+            <svg
+              className="absolute inset-0 w-full h-full z-0"
+              preserveAspectRatio="xMidYMid meet"
+              viewBox="0 0 100 100"
+            >
+              <image
+                href="/bg.svg"
+                x="0"
+                y="0"
+                width="100%"
+                height="100%"
+                preserveAspectRatio="xMidYMid meet"
+              />
+            </svg>
+            <div className="flex flex-col items-center justify-center h-full">
+              <div className="relative flex-shrink-0 justify-center items-center z-1">
+                <Image
+                  src="/charithaDp.png"
+                  alt="Profile picture"
+                  width={160}
+                  height={160}
+                  className="object-cover rounded-full  p-1 h-32 w-32"
+                />
+                <div className="absolute inset-0 border border-purple-500 rounded-full animate-pulse w-full h-full z-0" />
+                <div className="absolute top-3/4 about-me-bento-sm">
+                  <Link
+                    href="/about"
+                    className="text-purple-400 text-sm flex items-center group"
+                  >
+                    <Button className="btn-primary group-hover:scale-105 transition-transform duration-300">
+                      About Me
+                    </Button>
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </BentoCard>
+
+          {/* Card 4: Category 1 */}
+          <BentoCard colSpan={2} rowSpan={1}>
             <div className="flex items-start gap-3">
               <div className="w-10 h-10 rounded-lg flex items-center justify-center bg-purple-500/20 text-purple-500">
                 <FolderOpen className="h-5 w-5" />
@@ -111,67 +171,7 @@ export default function ProjectsPage() {
             </div>
           </BentoCard>
 
-          {/* Card 5: Category 2 */}
-          <BentoCard colSpan={1} rowSpan={1} variant="minimal">
-            <div className="flex items-start gap-3">
-              <div className="w-10 h-10 rounded-lg flex items-center justify-center bg-blue-500/20 text-blue-500">
-                <ShoppingBag className="h-5 w-5" />
-              </div>
-              <div>
-                <h3 className="text-lg font-medium text-white">Ecommerce</h3>
-                <p className="text-sm text-gray-300 mt-1">03 Projects</p>
-              </div>
-            </div>
-          </BentoCard>
 
-          {/* Card 6: Project 3 */}
-
-          {/* Card 7: Category 3 */}
-          <BentoCard colSpan={1} rowSpan={1} variant="minimal">
-            <div className="flex items-start gap-3">
-              <div className="w-10 h-10 rounded-lg flex items-center justify-center bg-green-500/20 text-green-500">
-                <GraduationCap className="h-5 w-5" />
-              </div>
-              <div>
-                <h3 className="text-lg font-medium text-white">Edutech</h3>
-                <p className="text-sm text-gray-300 mt-1">02 Projects</p>
-              </div>
-            </div>
-          </BentoCard>
-
-          {/* Card 8: Project 4 */}
-
-          {/* Card 9: Category 4 */}
-          <BentoCard colSpan={1} rowSpan={1} variant="minimal">
-            <div className="flex items-start gap-3">
-              <div className="w-10 h-10 rounded-lg flex items-center justify-center bg-red-500/20 text-red-500">
-                <Heart className="h-5 w-5" />
-              </div>
-              <div>
-                <h3 className="text-lg font-medium text-white">Health</h3>
-                <p className="text-sm text-gray-300 mt-1">04 Projects</p>
-              </div>
-            </div>
-          </BentoCard>
-
-          {/* Card 10: More Projects */}
-          <BentoCard colSpan={1} rowSpan={1} variant="minimal">
-            <Link
-              href="#"
-              className="flex flex-col items-center justify-center h-full text-center group"
-            >
-              <div className="flex items-center justify-center w-12 h-12 rounded-full bg-purple-500/20 text-purple-500 mb-2 group-hover:scale-110 transition-transform">
-                <Briefcase className="h-6 w-6" />
-              </div>
-              <h3 className="text-base font-medium text-white">
-                More Projects
-              </h3>
-              <p className="text-xs text-gray-400 flex items-center">
-                View All{" "}
-                <ArrowRight className="ml-1 h-3 w-3 group-hover:translate-x-1 transition-transform" />
-              </p>
-            </Link>
-          </BentoCard>
 
           {/* Card 12: Project Management */}
           {/* <BentoCard colSpan={2} rowSpan={1} variant="minimal">
@@ -191,23 +191,31 @@ export default function ProjectsPage() {
           </BentoCard> */}
 
           {/* Card 13: Contact CTA */}
-          <BentoCard colSpan={6} rowSpan={1} variant="featured">
-            <div className="flex flex-col md:flex-row items-center justify-between h-full gap-4">
-              <div>
-                <h3 className="text-2xl font-bold text-white mb-2">
-                  Interested in My Work?
-                </h3>
-                <p className="text-gray-300 mb-4 md:mb-0">
-                  Let's discuss your project requirements and how I can help
-                  bring your vision to life.
-                </p>
-              </div>
-              <Button className="btn-primary">
+             {/* Card 12: Get in Touch */}
+        <BentoCard colSpan={6} rowSpan={1} variant="minimal" className="contact-card md:col-span-3 lg:col-span-2 xl:col-span-6">
+          <div
+            className="flex flex-col items-center justify-center gap-3 h-full"
+          >
+            <div className="w-10 h-10 rounded-full flex items-center justify-center bg-purple-500/20 text-purple-500">
+              <Wand className="h-5 w-5" />
+            </div>
+            <div className="flex flex-col items-center justify-center">
+              <h3 className="font-medium text-lg text-white text-center">
+                Let's Work Together
+              </h3>
+              <p className="text-gray-300 mb-3 text-center">
+                Have a project in mind? Let's discuss how I can help bring your
+                ideas to life.
+              </p>
+              <Link href="/contact">
+              <Button className="btn-primary w-full sm:w-auto">
                 <Phone className="mr-2 h-4 w-4" />
                 Contact Me
               </Button>
+              </Link>
             </div>
-          </BentoCard>
+          </div>
+        </BentoCard>
         </BentoGrid>
       </section>
 
