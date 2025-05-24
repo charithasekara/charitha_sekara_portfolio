@@ -564,7 +564,7 @@ export default function AboutPage() {
               </div>
             </div>
             <Button className="btn-primary">
-              View Profile
+              View Skills
              
             </Button>
           </Link>
