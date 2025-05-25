@@ -3,18 +3,16 @@
 import { useState, useEffect } from "react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
-import { Menu, X } from "lucide-react"
+import { Home, User, Briefcase, Code, Mail, Menu, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import { ThemeToggle } from "@/components/theme-toggle"
 import { motion, AnimatePresence } from "framer-motion"
 
 const navLinks = [
-  { name: "Home", path: "/" },
-  { name: "About", path: "/about" },
-  { name: "Projects", path: "/projects" },
-  { name: "Skills", path: "/skills" },
-  { name: "Services", path: "/services" },
-  { name: "Contact", path: "/contact" },
+  { name: "Home", path: "/", icon: <Home className="h-5 w-5" /> },
+  { name: "About", path: "/about", icon: <User className="h-5 w-5" /> },
+  { name: "Projects", path: "/projects", icon: <Briefcase className="h-5 w-5" /> },
+  { name: "Skills", path: "/skills", icon: <Code className="h-5 w-5" /> },
+  { name: "Contact", path: "/contact", icon: <Mail className="h-5 w-5" /> },
 ]
 
 export default function Navbar() {
@@ -31,52 +29,76 @@ export default function Navbar() {
   }, [])
 
   useEffect(() => {
-    // Close mobile menu when route changes
     setIsOpen(false)
   }, [pathname])
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 flex justify-center px-4 py-3">
-      <div className="navbar-container max-w-3xl w-full rounded-full">
+    <>
+      {/* Desktop Navigation */}
+      <header className="fixed top-0 left-0 right-0 z-50 hidden md:flex justify-center px-4 py-3">
+        <div className="navbar-container max-w-3xl w-full rounded-full">
+          <nav
+            className={`flex items-center justify-center px-6 py-2 transition-all duration-300 rounded-full ${
+              scrolled ? "bg-gray-900/90 backdrop-blur-md shadow-md" : "bg-gray-900/70 backdrop-blur-sm"
+            } w-full`}
+          >
+            <div className="flex items-center justify-center space-x-1">
+              {navLinks.map((link) => (
+                <Link
+                  key={link.path}
+                  href={link.path}
+                  className={`nav-link px-3 py-2 rounded-md text-sm font-medium ${
+                    pathname === link.path
+                      ? "text-white bg-gray-800"
+                      : "text-gray-300 hover:text-white hover:bg-gray-800/50"
+                  }`}
+                >
+                  {link.name}
+                </Link>
+              ))}
+            </div>
+          </nav>
+        </div>
+      </header>
+
+      {/* Mobile Navigation */}
+      <header className="md:hidden fixed bottom-0 left-0 right-0 z-50 flex justify-center px-4 py-2">
         <nav
-          className={`flex items-center justify-center px-6 py-2 transition-all duration-300 rounded-full ${
-            scrolled ? "bg-gray-900/90 backdrop-blur-md shadow-md" : "bg-gray-900/70 backdrop-blur-sm"
-          } w-full`}
+          className={`navbar-mobile-container flex items-center justify-around w-full max-w-md mx-auto rounded-full transition-all duration-300 py-1 border border-purple-500/20 ${
+            scrolled ? "bg-gray-900/90 backdrop-blur-md shadow-md" : "bg-gray-900/80 backdrop-blur-sm"
+          }`}
         >
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center justify-center space-x-1">
-            {navLinks.map((link) => (
-              <Link key={link.path} href={link.path} className={`nav-link ${pathname === link.path ? "active" : ""}`}>
-                {link.name}
-              </Link>
-            ))}
-            {/* <div className="ml-4">
-              <ThemeToggle />
-            </div> */}
-          </div>
-
-          {/* Mobile Navigation Toggle */}
-          <div className="flex items-center justify-between w-full md:hidden">
-            <div className="invisible">
-              <ThemeToggle />
-            </div>
-            <div className="flex items-center space-x-1">
-              {isOpen ? (
-                <Button variant="ghost" size="icon" onClick={() => setIsOpen(false)} className="text-white">
-                  <X className="h-6 w-6" />
-                </Button>
-              ) : (
-                <Button variant="ghost" size="icon" onClick={() => setIsOpen(true)} className="text-white">
-                  <Menu className="h-6 w-6" />
-                </Button>
-              )}
-            </div>
-            <ThemeToggle />
-          </div>
+          {navLinks.map((link) => (
+            <Link
+              key={link.path}
+              href={link.path}
+              className={`flex flex-col items-center justify-center py-2 px-3 text-xs font-medium ${
+                pathname === link.path
+                  ? "text-white"
+                  : "text-gray-300 hover:text-white"
+              }`}
+              onClick={() => setIsOpen(false)}
+            >
+              {link.icon}
+              <span className="mt-1">{link.name}</span>
+            </Link>
+          ))}
         </nav>
-      </div>
+      </header>
 
-      {/* Mobile Navigation Menu */}
+      {/* Mobile Menu Toggle Button (Optional, for fallback) */}
+      {/* <div className="md:hidden fixed top-4 right-4 z-50">
+        <Button
+          variant="ghost"
+          size="icon"
+          onClick={() => setIsOpen(!isOpen)}
+          className="text-white"
+        >
+          {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+        </Button>
+      </div> */}
+
+      {/* Mobile Dropdown Menu (Optional, for fallback) */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
@@ -86,22 +108,26 @@ export default function Navbar() {
             transition={{ duration: 0.2 }}
             className="md:hidden bg-gray-900/95 backdrop-blur-md absolute top-16 left-4 right-4 rounded-xl shadow-lg overflow-hidden"
           >
-            <div className="mobile-menu-container rounded-xl w-full h-full">
-              <div className="flex flex-col p-4 space-y-3">
-                {navLinks.map((link) => (
-                  <Link
-                    key={link.path}
-                    href={link.path}
-                    className={`nav-link ${pathname === link.path ? "active" : ""}`}
-                  >
-                    {link.name}
-                  </Link>
-                ))}
-              </div>
+            <div className="flex flex-col p-4 space-y-3">
+              {navLinks.map((link) => (
+                <Link
+                  key={link.path}
+                  href={link.path}
+                  className={`nav-link flex items-center space-x-2 py-2 px-3 rounded-md ${
+                    pathname === link.path
+                      ? "text-white bg-gray-800"
+                      : "text-gray-300 hover:text-white hover:bg-gray-800/50"
+                  }`}
+                  onClick={() => setIsOpen(false)}
+                >
+                  {link.icon}
+                  <span>{link.name}</span>
+                </Link>
+              ))}
             </div>
           </motion.div>
         )}
       </AnimatePresence>
-    </header>
+    </>
   )
 }

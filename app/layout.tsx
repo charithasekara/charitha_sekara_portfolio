@@ -24,7 +24,7 @@ export default function RootLayout({
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem disableTransitionOnChange>
           <AnimatedBackground />
           <Navbar />
-          <main className="container mx-auto px-4 pt-20 pb-10">{children}</main>
+          <main className="container mx-auto px-4 pb-10">{children}</main>
         </ThemeProvider>
       </body>
     </html>
