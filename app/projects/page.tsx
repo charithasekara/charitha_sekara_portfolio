@@ -24,6 +24,7 @@ import {
 } from "lucide-react";
 import ProjectModal from "@/components/project-modal";
 import projects from "@/data/projects.json";
+import { IconBrandBehance, IconBrandDribbble } from '@tabler/icons-react';
 
 interface Project {
   id: number;
@@ -175,14 +176,14 @@ export default function ProjectsPage() {
               <div className="flex flex-wrap gap-2 justify-between p-2 bg-purple-500/20 rounded-2xl">
                 <Button className="btn-primary text-white w-full sm:w-auto flex-1 min-w-[150px]">
                   <Link
-                    href="https://dribbble.com/your-profile" // Replace with actual URL
+                    href="https://behance.net/charithweerasekara" // Replace with actual URL
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center justify-between w-full"
-                    aria-label="Visit Dribbble profile"
+                    aria-label="Visit Behance profile"
                   >
                     <span className="flex items-center">
-                      <ExternalLink className="h-5 w-5 mr-2" />
+                      <IconBrandBehance stroke={2} className="h-5 w-5 mr-2"/>
                       Behance
                     </span>
                     <ChevronRight className="h-5 w-5" />
@@ -190,14 +191,14 @@ export default function ProjectsPage() {
                 </Button>
                 <Button className="btn-primary text-white w-full sm:w-auto flex-1 min-w-[150px]">
                   <Link
-                    href="https://dribbble.com/your-profile" // Replace with actual URL
+                    href="https://dribbble.com/CharithaSekra" // Replace with actual URL
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center justify-between w-full"
                     aria-label="Visit Dribbble portfolio"
                   >
                     <span className="flex items-center">
-                      <ExternalLink className="h-5 w-5 mr-2" />
+                      <IconBrandDribbble stroke={2} className="h-5 w-5 mr-2" />
                       Dribbble
                     </span>
                     <ChevronRight className="h-5 w-5" />
