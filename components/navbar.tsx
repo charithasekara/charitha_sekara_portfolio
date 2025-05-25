@@ -3,20 +3,18 @@
 import { useState, useEffect } from "react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
-import { Home, User, Briefcase, Code, Mail, Menu, X } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { motion, AnimatePresence } from "framer-motion"
+import { Home, User, Briefcase, Code, Mail } from "lucide-react"
+import { motion } from "framer-motion"
 
 const navLinks = [
-  { name: "Home", path: "/", icon: <Home className="h-5 w-5" /> },
-  { name: "About", path: "/about", icon: <User className="h-5 w-5" /> },
-  { name: "Projects", path: "/projects", icon: <Briefcase className="h-5 w-5" /> },
-  { name: "Skills", path: "/skills", icon: <Code className="h-5 w-5" /> },
-  { name: "Contact", path: "/contact", icon: <Mail className="h-5 w-5" /> },
+  { name: "Home", path: "/", icon: <Home className="h-4 w-4" /> },
+  { name: "About", path: "/about", icon: <User className="h-4 w-4" /> },
+  { name: "Projects", path: "/projects", icon: <Briefcase className="h-4 w-4" /> },
+  { name: "Skills", path: "/skills", icon: <Code className="h-4 w-4" /> },
+  { name: "Contact", path: "/contact", icon: <Mail className="h-4 w-4" /> },
 ]
 
 export default function Navbar() {
-  const [isOpen, setIsOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
   const pathname = usePathname()
 
@@ -27,10 +25,6 @@ export default function Navbar() {
     window.addEventListener("scroll", handleScroll)
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
-
-  useEffect(() => {
-    setIsOpen(false)
-  }, [pathname])
 
   return (
     <>
@@ -47,13 +41,22 @@ export default function Navbar() {
                 <Link
                   key={link.path}
                   href={link.path}
-                  className={`nav-link px-3 py-2 rounded-md text-sm font-medium ${
+                  className={`nav-link px-3 py-2 rounded-md text-sm font-medium relative ${
                     pathname === link.path
-                      ? "text-white bg-gray-800"
-                      : "text-gray-300 hover:text-white hover:bg-gray-800/50"
+                      ? "text-white"
+                      : "text-gray-300 hover:text-purple-300 hover:bg-gray-800/50"
                   }`}
                 >
                   {link.name}
+                  {pathname === link.path && (
+                    <motion.div
+                      className="absolute bottom-0 left-0 right-0 h-0.5 bg-purple-500"
+                      layoutId="desktop-underline"
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      transition={{ duration: 0.2 }}
+                    />
+                  )}
                 </Link>
               ))}
             </div>
@@ -64,70 +67,40 @@ export default function Navbar() {
       {/* Mobile Navigation */}
       <header className="md:hidden fixed bottom-0 left-0 right-0 z-50 flex justify-center px-4 py-2">
         <nav
-          className={`navbar-mobile-container flex items-center justify-around w-full max-w-md mx-auto rounded-full transition-all duration-300 py-1 border border-purple-500/20 ${
+          className={`navbar-mobile-container flex items-center justify-around w-full max-w-md mx-auto rounded-full transition-all duration-300 py-2 border border-purple-500/20 ${
             scrolled ? "bg-gray-900/90 backdrop-blur-md shadow-md" : "bg-gray-900/80 backdrop-blur-sm"
           }`}
         >
           {navLinks.map((link) => (
-            <Link
+            <motion.div
               key={link.path}
-              href={link.path}
-              className={`flex flex-col items-center justify-center py-2 px-3 text-xs font-medium ${
-                pathname === link.path
-                  ? "text-white"
-                  : "text-gray-300 hover:text-white"
-              }`}
-              onClick={() => setIsOpen(false)}
+              whileTap={{ scale: 0.95 }}
+              transition={{ duration: 0.1 }}
             >
-              {link.icon}
-              <span className="mt-1">{link.name}</span>
-            </Link>
+              <Link
+                href={link.path}
+                className={`flex flex-col items-center justify-center py-2 px-3 text-xs font-medium relative ${
+                  pathname === link.path
+                    ? "text-purple-400"
+                    : "text-gray-300 hover:text-purple-300"
+                }`}
+              >
+                {link.icon}
+                <span className="mt-1">{link.name}</span>
+                {/* {pathname === link.path && (
+                  <motion.div
+                    className="absolute bottom-0 left-0 right-0 h-0.5 bg-purple-400"
+                    layoutId="mobile-underline"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ duration: 0.2 }}
+                  />
+                )} */}
+              </Link>
+            </motion.div>
           ))}
         </nav>
       </header>
-
-      {/* Mobile Menu Toggle Button (Optional, for fallback) */}
-      {/* <div className="md:hidden fixed top-4 right-4 z-50">
-        <Button
-          variant="ghost"
-          size="icon"
-          onClick={() => setIsOpen(!isOpen)}
-          className="text-white"
-        >
-          {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-        </Button>
-      </div> */}
-
-      {/* Mobile Dropdown Menu (Optional, for fallback) */}
-      <AnimatePresence>
-        {isOpen && (
-          <motion.div
-            initial={{ opacity: 0, y: -10 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -10 }}
-            transition={{ duration: 0.2 }}
-            className="md:hidden bg-gray-900/95 backdrop-blur-md absolute top-16 left-4 right-4 rounded-xl shadow-lg overflow-hidden"
-          >
-            <div className="flex flex-col p-4 space-y-3">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.path}
-                  href={link.path}
-                  className={`nav-link flex items-center space-x-2 py-2 px-3 rounded-md ${
-                    pathname === link.path
-                      ? "text-white bg-gray-800"
-                      : "text-gray-300 hover:text-white hover:bg-gray-800/50"
-                  }`}
-                  onClick={() => setIsOpen(false)}
-                >
-                  {link.icon}
-                  <span>{link.name}</span>
-                </Link>
-              ))}
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
     </>
   )
 }

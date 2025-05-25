@@ -179,7 +179,7 @@ export default function ProjectsPage() {
                     href="https://behance.net/charithweerasekara" // Replace with actual URL
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center justify-between w-full"
+                    className="flex items-center justify-between w-full link-btn"
                     aria-label="Visit Behance profile"
                   >
                     <span className="flex items-center">
@@ -194,7 +194,7 @@ export default function ProjectsPage() {
                     href="https://dribbble.com/CharithaSekra" // Replace with actual URL
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center justify-between w-full"
+                    className="flex items-center justify-between w-full link-btn"
                     aria-label="Visit Dribbble portfolio"
                   >
                     <span className="flex items-center">

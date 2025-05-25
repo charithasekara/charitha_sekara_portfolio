@@ -120,6 +120,7 @@
   z-index: -1;
   -webkit-backdrop-filter: blur(12px);
   backdrop-filter: blur(12px);
+  box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .mobile-menu-container {
@@ -333,6 +334,10 @@
     flex-direction: column;
     gap: 1rem;
   }
+}
+
+.link-btn {
+  flex-direction: row !important;
 }
 
 /* Ensure proper spacing on mobile */
