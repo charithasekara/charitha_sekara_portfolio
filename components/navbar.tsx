@@ -43,12 +43,12 @@ export default function Navbar() {
                   href={link.path}
                   className={`nav-link px-3 py-2 rounded-md text-sm font-medium relative ${
                     pathname === link.path
-                      ? "text-white"
+                      ? "text-purple-400"
                       : "text-gray-300 hover:text-purple-300 hover:bg-gray-800/50"
                   }`}
                 >
                   {link.name}
-                  {pathname === link.path && (
+                  {/* {pathname === link.path && (
                     <motion.div
                       className="absolute bottom-0 left-0 right-0 h-0.5 bg-purple-500"
                       layoutId="desktop-underline"
@@ -56,7 +56,7 @@ export default function Navbar() {
                       animate={{ opacity: 1 }}
                       transition={{ duration: 0.2 }}
                     />
-                  )}
+                  )} */}
                 </Link>
               ))}
             </div>
