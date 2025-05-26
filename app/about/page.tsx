@@ -150,7 +150,7 @@ export default function AboutPage() {
         {/* Card 2: Education */}
         <BentoCard colSpan={2} rowSpan={1}>
           <div className="flex items-center gap-3 mb-3">
-            <div className="w-10 h-10 rounded-lg flex items-center justify-center bg-purple-400/20 text-gray-50">
+            <div className="w-10 h-10 rounded-lg flex items-center justify-center bg-yellow-500/20 text-yellow-500">
               <GraduationCap className="h-5 w-5" />
             </div>
             <div>
@@ -185,7 +185,7 @@ export default function AboutPage() {
         {/* Card 3: Languages */}
         <BentoCard colSpan={1} rowSpan={1} variant="minimal">
           <div className="flex flex-col items-center justify-center">
-            <div className="w-10 h-10 rounded-lg flex items-center justify-center bg-purple-400/20 text-gray-50">
+            <div className="w-10 h-10 rounded-lg flex items-center justify-center bg-blue-400/20 text-blue-400">
               <MapPin className="h-5 w-5" />
             </div>
             <h3 className="mt-3 text-lg font-medium text-white">Location</h3>
@@ -228,7 +228,7 @@ export default function AboutPage() {
         {/* Card 5: Journey */}
         <BentoCard colSpan={2} rowSpan={2}>
           <div className="flex items-center gap-3 mb-3">
-            <div className="w-10 h-10 rounded-lg flex items-center justify-center bg-purple-400/20 text-gray-50">
+            <div className="w-10 h-10 rounded-lg flex items-center justify-center bg-orange-400/20 text-orange-400">
               <BriefcaseBusiness className="h-5 w-5" />
             </div>
             <div>
@@ -375,7 +375,7 @@ export default function AboutPage() {
           className="hackthon-Card md:col-span-2"
         >
           <div className="flex flex-col justify-center items-center gap-3 mb-3">
-            <div className="w-10 h-10 rounded-lg flex items-center justify-center bg-purple-400/20 text-gray-50">
+            <div className="w-10 h-10 rounded-lg flex items-center justify-center bg-teal-400/20 text-teal-400">
               <Braces className="h-5 w-5" />
             </div>
             <div>
@@ -400,7 +400,7 @@ export default function AboutPage() {
         {/* Card 8: Extra Activities */}
         <BentoCard colSpan={1} rowSpan={1}>
           <div className="flex flex-col justify-center items-center gap-3 mb-3">
-            <div className="w-10 h-10 rounded-lg flex items-center justify-center bg-purple-400/20 text-gray-50">
+            <div className="w-10 h-10 rounded-lg flex items-center justify-center bg-sky-400/20 text-sky-400">
               <Activity className="h-5 w-5" />
             </div>
             <div>

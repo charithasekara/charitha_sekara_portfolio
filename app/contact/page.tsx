@@ -47,7 +47,7 @@ export default function ContactPage() {
     <section className="py-10">
       <BentoGrid className="container main-layout mx-auto">
         {/* Card 1: Contact Form */}
-        <BentoCard colSpan={3} rowSpan={2} variant="featured" hasPersistentHover>
+        <BentoCard colSpan={3} rowSpan={2} hasPersistentHover>
           <form onSubmit={handleSubmit} className="space-y-4 h-full flex flex-col">
             <h2 className="text-xl sm:text-2xl font-bold text-white mb-4">Get In Touch</h2>
             <div>
@@ -57,7 +57,7 @@ export default function ContactPage() {
                 placeholder="Your Name"
                 value={formData.name}
                 onChange={handleChange}
-                className="bg-gray-800/50 border-gray-700 focus:border-purple-500"
+                className="bg-gray-800/50 border-gray-700 rounded-xl focus:border-purple-500"
                 required
               />
             </div>
@@ -68,7 +68,7 @@ export default function ContactPage() {
                 placeholder="Your Email"
                 value={formData.email}
                 onChange={handleChange}
-                className="bg-gray-800/50 border-gray-700 focus:border-purple-500"
+                className="bg-gray-800/50 rounded-xl border-gray-700 focus:border-purple-500"
                 required
               />
             </div>
@@ -78,7 +78,7 @@ export default function ContactPage() {
                 placeholder="Your Message"
                 value={formData.message}
                 onChange={handleChange}
-                className="bg-gray-800/50 border-gray-700 focus:border-purple-500 h-full min-h-[120px]"
+                className="bg-gray-800/50 rounded-xl border-gray-700 focus:border-purple-500 h-full min-h-[120px]"
                 required
               />
             </div>
@@ -90,7 +90,7 @@ export default function ContactPage() {
         </BentoCard>
 
         {/* Card 2: Let's Work Together */}
-        <BentoCard colSpan={3} rowSpan={1}>
+        {/* <BentoCard colSpan={3} rowSpan={1}>
           <div className="flex flex-col h-full">
             <div className="flex items-center gap-3 mb-3">
               <div className="w-10 h-10 rounded-lg flex items-center justify-center bg-purple-500/20 text-purple-500">
@@ -104,7 +104,7 @@ export default function ContactPage() {
             </p>
             <p className="text-sm text-gray-400">I typically respond within 24 hours during business days.</p>
           </div>
-        </BentoCard>
+        </BentoCard> */}
 
         {/* Card 3: WhatsApp */}
         <BentoCard colSpan={1} rowSpan={1} variant="minimal">
@@ -113,7 +113,18 @@ export default function ContactPage() {
               <BrandWhatsapp className="h-6 w-6" />
             </div>
             <h3 className="text-lg font-medium text-white">WhatsApp</h3>
-            <p className="text-sm text-gray-300">@pragadeshv</p>
+            <p className="text-sm text-gray-300 text-wrap">+94702516984, +94721996364</p>
+          </div>
+        </BentoCard>
+
+         {/* Card 7: LinkedIn */}
+        <BentoCard colSpan={1} rowSpan={1} variant="minimal">
+          <div className="flex flex-col items-center justify-center h-full text-center">
+            <div className="flex items-center justify-center w-12 h-12 rounded-full bg-blue-600/20 text-blue-600 mb-2">
+              <BrandLinkedin className="h-6 w-6" />
+            </div>
+            <h3 className="text-lg font-medium text-white">LinkedIn</h3>
+            <p className="text-sm text-gray-300">@charithaweerasekara</p>
           </div>
         </BentoCard>
 
@@ -124,45 +135,94 @@ export default function ContactPage() {
               <BrandTelegram className="h-6 w-6" />
             </div>
             <h3 className="text-lg font-medium text-white">Telegram</h3>
-            <p className="text-sm text-gray-300">@pragadeshv</p>
+            <p className="text-sm text-gray-300">@charitha</p>
           </div>
         </BentoCard>
 
         {/* Card 5: Email */}
-        <BentoCard colSpan={2} rowSpan={1}>
-          <div className="flex items-start gap-3">
-            <div className="w-10 h-10 rounded-lg flex items-center justify-center bg-red-500/20 text-red-500">
-              <Mail className="h-5 w-5" />
+        <BentoCard colSpan={1} rowSpan={1}  variant="minimal">
+          <div className="flex flex-col items-center justify-center text-center  h-full">
+            <div className="w-10 h-10 rounded-lg flex items-center justify-center bg-red-500/20 text-red-500 mb-3">
+              <Mail className="h-6 w-6" />
             </div>
-            <div>
+            
               <h3 className="text-lg font-medium text-white">Email Me</h3>
-              <p className="text-sm text-gray-300 mt-1">pragadesh@example.com</p>
-              <p className="text-xs text-gray-400">For project inquiries and collaborations</p>
-            </div>
+              <p className="text-sm text-gray-300 mt-1 text-wrap">charithmadhushansekara@gmail.com</p>
+              {/* <p className="text-xs text-gray-400">For project inquiries and collaborations</p> */}
+            
           </div>
         </BentoCard>
 
         {/* Card 6: Twitter */}
-        <BentoCard colSpan={1} rowSpan={1} variant="minimal">
+       
+
+       
+
+       
+
+         {/* Card 11: Resume */}
+        <BentoCard colSpan={2} rowSpan={1}>
+          <div className="flex flex-col h-full">
+            <div className="flex items-center gap-3 mb-3">
+              <div className="w-10 h-10 rounded-lg flex items-center justify-center bg-yellow-500/20 text-yellow-500">
+                <FileText className="h-5 w-5" />
+              </div>
+              <h3 className="text-lg font-medium text-white">Download My Resume</h3>
+            </div>
+            <p className="text-sm text-gray-300 mb-4">
+              Get a detailed overview of my skills, experience, and qualifications in PDF format.
+            </p>
+            <div className="mt-auto">
+              <Button className="btn-primary w-full">Download PDF</Button>
+            </div>
+          </div>
+        </BentoCard>
+
+         <BentoCard colSpan={1} rowSpan={1} variant="minimal">
           <div className="flex flex-col items-center justify-center h-full text-center">
             <div className="flex items-center justify-center w-12 h-12 rounded-full bg-blue-400/20 text-blue-400 mb-2">
               <BrandTwitter className="h-6 w-6" />
             </div>
             <h3 className="text-lg font-medium text-white">Twitter</h3>
-            <p className="text-sm text-gray-300">@pragadeshv</p>
+            <p className="text-sm text-gray-300">@charithasekara</p>
           </div>
         </BentoCard>
 
-        {/* Card 7: LinkedIn */}
-        <BentoCard colSpan={1} rowSpan={1} variant="minimal">
+         <BentoCard colSpan={1} rowSpan={1} variant="minimal">
           <div className="flex flex-col items-center justify-center h-full text-center">
-            <div className="flex items-center justify-center w-12 h-12 rounded-full bg-blue-600/20 text-blue-600 mb-2">
-              <BrandLinkedin className="h-6 w-6" />
+            <div className="flex items-center justify-center w-12 h-12 rounded-full bg-blue-400/20 text-blue-400 mb-2">
+              <BrandTwitter className="h-6 w-6" />
             </div>
-            <h3 className="text-lg font-medium text-white">LinkedIn</h3>
-            <p className="text-sm text-gray-300">@pragadeshv</p>
+            <h3 className="text-lg font-medium text-white">Twitter</h3>
+            <p className="text-sm text-gray-300">@charithasekara</p>
           </div>
         </BentoCard>
+
+        {/* Card 9: Location */}
+        {/* <BentoCard colSpan={1} rowSpan={1} variant="minimal">
+          <div className="flex items-start gap-3">
+            <div className="w-10 h-10 rounded-lg flex items-center justify-center bg-blue-500/20 text-blue-500">
+              <MapPin className="h-5 w-5" />
+            </div>
+            <div>
+              <h3 className="text-lg font-medium text-white">Location</h3>
+              <p className="text-sm text-gray-300 mt-1">Sri Lanka | Anuradhapura</p>
+            </div>
+          </div>
+        </BentoCard> */}
+
+        {/* Card 10: Availability */}
+        {/* <BentoCard colSpan={1} rowSpan={1} variant="minimal">
+          <div className="flex items-start gap-3">
+            <div className="w-10 h-10 rounded-lg flex items-center justify-center bg-green-500/20 text-green-500">
+              <CheckCircle className="h-5 w-5" />
+            </div>
+            <div>
+              <h3 className="text-lg font-medium text-white">Availability</h3>
+              <p className="text-sm text-gray-300 mt-1">Available to Work</p>
+            </div>
+          </div>
+        </BentoCard> */}
 
         {/* Card 8: Schedule a Call */}
         <BentoCard colSpan={2} rowSpan={1}>
@@ -182,52 +242,8 @@ export default function ContactPage() {
           </div>
         </BentoCard>
 
-        {/* Card 9: Location */}
-        <BentoCard colSpan={1} rowSpan={1} variant="minimal">
-          <div className="flex items-start gap-3">
-            <div className="w-10 h-10 rounded-lg flex items-center justify-center bg-blue-500/20 text-blue-500">
-              <MapPin className="h-5 w-5" />
-            </div>
-            <div>
-              <h3 className="text-lg font-medium text-white">Location</h3>
-              <p className="text-sm text-gray-300 mt-1">India, IST</p>
-            </div>
-          </div>
-        </BentoCard>
-
-        {/* Card 10: Availability */}
-        <BentoCard colSpan={1} rowSpan={1} variant="minimal">
-          <div className="flex items-start gap-3">
-            <div className="w-10 h-10 rounded-lg flex items-center justify-center bg-green-500/20 text-green-500">
-              <CheckCircle className="h-5 w-5" />
-            </div>
-            <div>
-              <h3 className="text-lg font-medium text-white">Availability</h3>
-              <p className="text-sm text-gray-300 mt-1">Available to Work</p>
-            </div>
-          </div>
-        </BentoCard>
-
-        {/* Card 11: Resume */}
-        <BentoCard colSpan={2} rowSpan={1}>
-          <div className="flex flex-col h-full">
-            <div className="flex items-center gap-3 mb-3">
-              <div className="w-10 h-10 rounded-lg flex items-center justify-center bg-yellow-500/20 text-yellow-500">
-                <FileText className="h-5 w-5" />
-              </div>
-              <h3 className="text-lg font-medium text-white">Download My Resume</h3>
-            </div>
-            <p className="text-sm text-gray-300 mb-4">
-              Get a detailed overview of my skills, experience, and qualifications in PDF format.
-            </p>
-            <div className="mt-auto">
-              <Button className="btn-outline w-full">Download PDF</Button>
-            </div>
-          </div>
-        </BentoCard>
-
         {/* Card 12: Other Ways to Connect */}
-        <BentoCard colSpan={6} rowSpan={1} variant="featured">
+        {/* <BentoCard colSpan={3} rowSpan={1} variant="featured">
           <div className="flex flex-col h-full">
             <h3 className="text-xl font-bold text-white mb-3">Other Ways to Connect</h3>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
@@ -245,7 +261,7 @@ export default function ContactPage() {
               </div>
             </div>
           </div>
-        </BentoCard>
+        </BentoCard> */}
         {/* New Card: Quick Response */}
         <BentoCard colSpan={2} rowSpan={1} variant="minimal">
           <div className="flex items-center justify-center h-full text-center">
