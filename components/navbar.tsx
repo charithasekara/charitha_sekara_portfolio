@@ -67,7 +67,7 @@ export default function Navbar() {
       {/* Mobile Navigation */}
       <header className="md:hidden fixed bottom-0 left-0 right-0 z-50 flex justify-center px-4 py-2">
         <nav
-          className={`navbar-mobile-container flex items-center justify-around w-full max-w-md mx-auto rounded-full transition-all duration-300 py-2 border border-purple-500/20 ${
+          className={`navbar-mobile-container flex items-center justify-around w-full max-w-md mx-auto rounded-full transition-all duration-300 py-2 border-4 border-purple-500/20 ${
             scrolled ? "bg-gray-900/90 backdrop-blur-md shadow-md" : "bg-gray-900/80 backdrop-blur-sm"
           }`}
         >
