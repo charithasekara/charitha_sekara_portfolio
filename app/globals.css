@@ -638,3 +638,55 @@
   color: transparent;
   animation: var(--animate-aurora);
 }
+
+.timeline {
+  position: relative;
+  padding-left: 25px;
+}
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 2px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(#8b5cf6 33%, transparent 0);
+  background-size: 2px 10px;
+  background-repeat: repeat-y;
+}
+.timeline-item {
+  display: flex;
+  align-items: center;
+  /* margin-bottom: 16px; */
+  position: relative;
+}
+.timeline-number {
+  position: absolute;
+  left: -36px;
+  width: 28px;
+  height: 28px;
+  background: #5d3da7ad;
+  color: #ffffff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  border: 1px solid #ffffff91;
+}
+.timeline-content {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  width: 100%;
+}
+.timeline-content:hover {
+  transform: translateX(5px);
+  transition: transform 0.2s ease-in-out;
+}
+
+.workflow-icon {
+  min-width: 16px;
+  min-height: 16px;
+}

@@ -45,10 +45,10 @@ import ProjectImage from "@/components/project-image";
 import { AuroraText } from "@/components/aurora-text";
 
 const projects = [
- { imageSrc: '/pimg1.png', href: '/project1' },
- { imageSrc: '/pimg2.png', href: '/project1' },
- { imageSrc: '/pimg1.png', href: '/project1' },
- { imageSrc: '/pimg2.png', href: '/project1' },
+  { imageSrc: "/pimg1.png", href: "/project1" },
+  { imageSrc: "/pimg2.png", href: "/project1" },
+  { imageSrc: "/pimg1.png", href: "/project1" },
+  { imageSrc: "/pimg2.png", href: "/project1" },
 ];
 
 export default function Home() {
@@ -57,9 +57,7 @@ export default function Home() {
       <BentoGrid className="container main-layout mx-auto">
         {/* Card 1: Hero */}
         <BentoCard colSpan={3} rowSpan={1} variant="minimal" hasPersistentHover>
-          <div
-            className="lg:ps-8 flex flex-col lg:flex-row items-center gap-6 h-full"
-          >
+          <div className="lg:ps-8 flex flex-col lg:flex-row items-center gap-6 h-full">
             <div className="relative w-24 h-24 md:w-32 md:h-32 lg:w-40 lg:h-40 flex-shrink-0 ">
               <Image
                 src="/charithaDp.png"
@@ -83,9 +81,7 @@ export default function Home() {
                   bg-clip-text text-transparent TextGradient
                 "
               >
-                <AuroraText>
-                Charitha Weerasekara
-                </AuroraText>
+                <AuroraText>Charitha Weerasekara</AuroraText>
               </motion.h1>
               <motion.p
                 initial={{ opacity: 0, y: 20 }}
@@ -102,14 +98,13 @@ export default function Home() {
                 className="flex justify-center lg:justify-start"
               >
                 <Link
-                href="/about"
-                className="text-purple-400 text-sm flex items-center group"
-              >
-                <Button className="btn-primary group-hover:scale-105 transition-transform duration-300">
-                  Explore My Work
-                 
-                </Button>
-              </Link>
+                  href="/about"
+                  className="text-purple-400 text-sm flex items-center group"
+                >
+                  <Button className="btn-primary group-hover:scale-105 transition-transform duration-300">
+                    Explore My Work
+                  </Button>
+                </Link>
               </motion.div>
             </div>
           </div>
@@ -157,7 +152,12 @@ export default function Home() {
         {/* Card 3: Projects Count */}
 
         {/* Card 6: work process */}
-        <BentoCard colSpan={1} rowSpan={2} variant="minimal" className="work-process-card md:col-span-1">
+        <BentoCard
+          colSpan={1}
+          rowSpan={2}
+          variant="minimal"
+          className="work-process-card md:col-span-1"
+        >
           <div className="center-content">
             <div className="flex flex-row gap-2 items-center justify-center">
               <Star className="h-4 w-4 text-purple-500" />
@@ -168,44 +168,85 @@ export default function Home() {
             Workflow Highlight
           </h3>
           <div className="h-px bg-gray-800 my-2 -m-6"></div>
-          <div className="flex flex-col gap-3 mt-4">
-            <div className="flex items-center gap-3 border border-stone-500 p-1 rounded-xl pl-1 px-2 bg-purple-500/20 text-white">
-              <Target className="h-6 w-6  p-1 rounded-md bg-purple-400/20 text-white" />
-              <p className="text-sm text-gray-300 font-medium">Goals</p>
+          <div className="flex flex-col gap-3 mt-4 timeline">
+            <div className="timeline-item">
+              <div className="timeline-number">1</div>
+              <div className="timeline-content bg-purple-500/20 text-white border border-stone-500 rounded-full">
+                <Target className="h-4 w-4  rounded-md  text-purple-400 workflow-icon" />
+                <p className="text-sm text-gray-300 font-medium text-wrap">
+                  Goals
+                </p>
+              </div>
             </div>
-            <div className="flex items-center gap-3 border border-stone-500 p-1 rounded-xl pl-1 px-2 bg-purple-500/20 text-white">
-              <FileText className="h-6 w-6 p-1 rounded-md bg-purple-400/20 text-white" />
-              <p className="text-sm text-gray-300 font-medium">Research</p>
+
+            <div className="timeline-item">
+              <div className="timeline-number">2</div>
+              <div className="timeline-content bg-purple-500/20 text-white border border-stone-500 rounded-full">
+                <FileText className="h-4 w-4  rounded-md  text-purple-400 workflow-icon" />
+                <p className="text-sm text-gray-300 font-medium text-wrap">
+                  Research
+                </p>
+              </div>
             </div>
-            <div className="flex items-center gap-3 border border-stone-500 p-1 rounded-xl pl-1 px-2 bg-purple-500/20 text-white">
-              <Grid className="h-6 w-6  p-1 rounded-md bg-purple-400/20 text-white" />
-              <p className="text-sm text-gray-300 font-medium">Wireframe</p>
+
+            <div className="timeline-item">
+              <div className="timeline-number">3</div>
+              <div className="timeline-content bg-purple-500/20 text-white border border-stone-500 rounded-full">
+                <Grid className="h-4 w-4  rounded-md  text-purple-400 workflow-icon" />
+                <p className="text-sm text-gray-300 font-medium text-wrap">
+                  Wireframe
+                </p>
+              </div>
             </div>
-            <div className="flex items-center gap-3 border border-stone-500 p-1 rounded-xl pl-1 px-2 bg-purple-500/20 text-white">
-              <Code className="h-6 w-6  p-1 rounded-md bg-purple-400/20 text-white" />
-              <p className="text-sm text-gray-300 font-medium">Prototyping</p>
+
+            <div className="timeline-item">
+              <div className="timeline-number">3</div>
+              <div className="timeline-content bg-purple-500/20 text-white border border-stone-500 rounded-full">
+                <Code className="h-4 w-4  rounded-md  text-purple-400 workflow-icon" />
+                <p className="text-sm text-gray-300 font-medium text-wrap">
+                  Prototyping
+                </p>
+              </div>
             </div>
-            <div className="flex items-center gap-3 border border-stone-500 p-1 rounded-xl pl-1 px-2 bg-purple-500/20 text-white">
-              <PenTool className="h-6 w-6  p-1 rounded-md bg-purple-400/20 text-white" />
-              <p className="text-sm text-gray-300 font-medium">
-                Finalize Design
-              </p>
+
+            <div className="timeline-item">
+              <div className="timeline-number">3</div>
+              <div className="timeline-content bg-purple-500/20 text-white border border-stone-500 rounded-full">
+                <PenTool className="h-4 w-4  rounded-md  text-purple-400 workflow-icon" />
+                <p className="text-sm text-gray-300 font-medium text-wrap">
+                  Finalize
+                </p>
+              </div>
             </div>
-            <div className="flex items-center gap-3 border border-stone-500 p-1 rounded-xl pl-1 px-2 bg-purple-500/20 text-white">
-              <TabletSmartphone className="h-6 w-6  p-1 rounded-md bg-purple-400/20 text-white" />
-              <p className="text-sm text-gray-300 font-medium">Test</p>
+
+            <div className="timeline-item">
+              <div className="timeline-number">3</div>
+              <div className="timeline-content bg-purple-500/20 text-white border border-stone-500 rounded-full">
+                <TabletSmartphone className="h-4 w-4  rounded-md  text-purple-400 workflow-icon" />
+                <p className="text-sm text-gray-300 font-medium text-wrap">
+                  Testing
+                </p>
+              </div>
             </div>
-            <div className="flex items-center gap-3 border border-stone-500 p-1 rounded-xl pl-1 px-2 bg-purple-500/20 text-white">
-              <Code className="h-6 w-6  p-1 rounded-md bg-purple-400/20 text-white" />
-              <p className="text-sm text-gray-300 font-medium">Implement</p>
+
+            <div className="timeline-item">
+              <div className="timeline-number">3</div>
+              <div className="timeline-content bg-purple-500/20 text-white border border-stone-500 rounded-full">
+                <Code className="h-4 w-4  rounded-md  text-purple-400 workflow-icon" />
+                <p className="text-sm text-gray-300 font-medium text-wrap">
+                  Implement
+                </p>
+              </div>
             </div>
-            <div className="flex items-center gap-3 border border-stone-500 p-1 rounded-xl pl-1 px-2 bg-purple-500/20 text-white">
-              <Code className="h-6 w-6  p-1 rounded-md bg-purple-400/20 text-white" />
-              <p className="text-sm text-gray-300 font-medium">Launch</p>
-            </div>
-            <div className="flex items-center gap-3 border border-stone-500 p-1 rounded-xl pl-1 px-2 bg-purple-500/20 text-white">
-              <Code className="h-6 w-6  p-1 rounded-md bg-purple-400/20 text-white" />
-              <p className="text-sm text-gray-300 font-medium">Feedback</p>
+
+            <div className="timeline-item">
+              <div className="timeline-number">3</div>
+              <div className="timeline-content bg-purple-500/20 text-white border border-stone-500 rounded-full">
+                <Code className="h-4 w-4  rounded-md  text-purple-400 workflow-icon" />
+                <p className="text-sm text-gray-300 font-medium text-wrap">
+                  Feedback
+                </p>
+              </div>
             </div>
           </div>
         </BentoCard>
@@ -233,7 +274,11 @@ export default function Home() {
         </BentoCard> */}
 
         {/* Card 5: Featured Project */}
-        <BentoCard colSpan={1} rowSpan={1} className="feature-card md:col-span-4">
+        <BentoCard
+          colSpan={1}
+          rowSpan={1}
+          className="feature-card md:col-span-4"
+        >
           <div className="project-card-content h-full">
             {/* Non-animating title */}
             <div className="center-content">
@@ -252,19 +297,19 @@ export default function Home() {
               <div className="flex animate-scroll whitespace-nowrap absolute z-0 h-full">
                 {projects.map((project, index) => (
                   <ProjectImage
-            key={index}
-            imageSrc={project.imageSrc}
-            href={project.href}
-          />
-        ))}
-        {/* Duplicate items for seamless looping */}
-        {projects.map((project, index) => (
-          <ProjectImage
-            key={`duplicate-${index}`}
-            imageSrc={project.imageSrc}
-            href={project.href}
-          />
-        ))}
+                    key={index}
+                    imageSrc={project.imageSrc}
+                    href={project.href}
+                  />
+                ))}
+                {/* Duplicate items for seamless looping */}
+                {projects.map((project, index) => (
+                  <ProjectImage
+                    key={`duplicate-${index}`}
+                    imageSrc={project.imageSrc}
+                    href={project.href}
+                  />
+                ))}
               </div>
             </div>
             {/* View Projects Button with animation */}
@@ -275,7 +320,6 @@ export default function Home() {
               >
                 <Button className="btn-primary group-hover:scale-105 transition-transform duration-300">
                   View Projects
-                 
                 </Button>
               </Link>
             </div>
@@ -283,7 +327,11 @@ export default function Home() {
         </BentoCard>
 
         {/* Card 7: Learn More About Me */}
-        <BentoCard colSpan={2} rowSpan={1} className="about-card lg:col-span-3 xl:col-span-2">
+        <BentoCard
+          colSpan={2}
+          rowSpan={1}
+          className="about-card lg:col-span-3 xl:col-span-2"
+        >
           <Link
             href="/about"
             className="flex flex-col items-center justify-center h-full group"
@@ -292,7 +340,9 @@ export default function Home() {
               <Star className="h-4 w-4 text-purple-500" />
               <p className="text-xs text-gray-400">About Me</p>
             </div>
-            <h3 className="text-lg mt-2 font-medium text-white">More Details</h3>
+            <h3 className="text-lg mt-2 font-medium text-white">
+              More Details
+            </h3>
             <div className="flex flex-col gap-2 w-full max-w-2xl my-3 mb-4 -mx-[157px] ">
               {/* Row 1 */}
               <div className="flex animate-scroll whitespace-nowrap">
@@ -378,16 +428,17 @@ export default function Home() {
               </div>
             </div>
             <p className="text-xs text-gray-400 flex items-center justify-center">
-              <Button className="btn-primary">
-                View Skills
-               
-              </Button>
+              <Button className="btn-primary">View Skills</Button>
             </p>
           </Link>
         </BentoCard>
 
         {/* Card 8: Highlighted Service */}
-        <BentoCard colSpan={2} rowSpan={1} className="service-card md:col-span-2">
+        <BentoCard
+          colSpan={2}
+          rowSpan={1}
+          className="service-card md:col-span-2"
+        >
           <Link
             href="/services"
             className="flex flex-col items-center justify-center h-full group"
@@ -396,7 +447,9 @@ export default function Home() {
               <Boxes className="h-4 w-4 text-purple-500" />
               <p className="text-xs text-gray-400">Services</p>
             </div>
-            <h3 className="text-lg mt-2 font-medium text-white">Service Suite</h3>
+            <h3 className="text-lg mt-2 font-medium text-white">
+              Service Suite
+            </h3>
             <div className="flex flex-col gap-2 w-full max-w-2xl my-3 mb-4 -mx-[157px] ">
               {/* Row 1 */}
               <div className="flex animate-scroll-reverse whitespace-nowrap">
@@ -464,10 +517,7 @@ export default function Home() {
               </div>
             </div>
             <p className="text-xs text-gray-400 flex items-center justify-center">
-              <Button className="btn-primary">
-                View Services
-               
-              </Button>
+              <Button className="btn-primary">View Services</Button>
             </p>
           </Link>
         </BentoCard>
@@ -482,7 +532,9 @@ export default function Home() {
               <CodeXml className="h-4 w-4 text-purple-500" />
               <p className="text-xs text-gray-400">My Stacks</p>
             </div>
-            <h3 className="text-lg mt-2 font-medium text-white">Tech Arsenal</h3>
+            <h3 className="text-lg mt-2 font-medium text-white">
+              Tech Arsenal
+            </h3>
 
             <div className="flex flex-row gap-3 my-3 mb-4 animate-scroll whitespace-nowrap">
               <div className="flex items-center gap-3 border border-stone-500 p-1 rounded-md pl-1 px-2 bg-purple-500/20 text-white">
@@ -536,18 +588,18 @@ export default function Home() {
                 <p className="text-sm text-gray-300 font-medium">Angular</p>
               </div>
             </div>
-            <Button className="btn-primary">
-              View Profile
-             
-            </Button>
+            <Button className="btn-primary">View Profile</Button>
           </Link>
         </BentoCard>
 
         {/* Card 12: Get in Touch */}
-        <BentoCard colSpan={6} rowSpan={1} variant="minimal" className="contact-card md:col-span-3 lg:col-span-2 xl:col-span-6">
-          <div
-            className="flex flex-col items-center justify-center gap-3 h-full"
-          >
+        <BentoCard
+          colSpan={6}
+          rowSpan={1}
+          variant="minimal"
+          className="contact-card md:col-span-3 lg:col-span-2 xl:col-span-6"
+        >
+          <div className="flex flex-col items-center justify-center gap-3 h-full">
             <div className="w-10 h-10 rounded-full flex items-center justify-center bg-purple-500/20 text-purple-500">
               <Wand className="h-5 w-5" />
             </div>
@@ -560,10 +612,10 @@ export default function Home() {
                 ideas to life.
               </p>
               <Link href="/contact">
-              <Button className="btn-primary w-full sm:w-auto">
-                <Phone className="mr-2 h-4 w-4" />
-                Contact Me
-              </Button>
+                <Button className="btn-primary w-full sm:w-auto">
+                  <Phone className="mr-2 h-4 w-4" />
+                  Contact Me
+                </Button>
               </Link>
             </div>
           </div>
