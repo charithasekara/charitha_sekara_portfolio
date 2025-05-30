@@ -187,6 +187,12 @@
   min-height: fit-content;
   border-radius: 1.75rem;
   /* background: linear-gradient(135deg, rgb(30, 30, 40), rgb(20, 0, 56)); */
+  position: relative;
+}
+
+.bento-card > * {
+  position: relative;
+  z-index: 1; /* Ensure content stays above noise and gradient layers */
 }
 
 .bento-card > div {
@@ -223,6 +229,19 @@
   animation: border-rotate 4s linear infinite;
 }
 
+.bento-card.featured::after,
+.bento-card.minimal::after,
+.bento-card:not(.featured):not(.minimal)::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url('/public/noise.png'); /* Same noise texture */
+  background-repeat: repeat;
+  opacity: 0.1;
+  pointer-events: none;
+  z-index: 0;
+}
+
 .main-layout {
   padding-inline: 0px;
 }
@@ -231,6 +250,9 @@
 @media (max-width: 640px) {
   .bento-card {
     @apply p-3;
+  }
+  .bento-card::after {
+    opacity: 0.08; /* Slightly reduce noise intensity on mobile for better clarity */
   }
 }
 
