@@ -39,6 +39,9 @@ import {
   CodeXml,
   Sparkles,
   Wand,
+  BookCheck,
+  Rocket,
+  MessageSquareCode,
 } from "lucide-react";
 
 import ProjectImage from "@/components/project-image";
@@ -200,9 +203,9 @@ export default function Home() {
             </div>
 
             <div className="timeline-item">
-              <div className="timeline-number">3</div>
+              <div className="timeline-number">4</div>
               <div className="timeline-content bg-purple-500/20 text-white border border-stone-500 rounded-full">
-                <Code className="h-4 w-4  rounded-md  text-purple-400 workflow-icon" />
+                <PenTool className="h-4 w-4  rounded-md  text-purple-400 workflow-icon" />
                 <p className="text-sm text-gray-300 font-medium text-wrap">
                   Prototyping
                 </p>
@@ -210,9 +213,9 @@ export default function Home() {
             </div>
 
             <div className="timeline-item">
-              <div className="timeline-number">3</div>
+              <div className="timeline-number">5</div>
               <div className="timeline-content bg-purple-500/20 text-white border border-stone-500 rounded-full">
-                <PenTool className="h-4 w-4  rounded-md  text-purple-400 workflow-icon" />
+                <BookCheck className="h-4 w-4  rounded-md  text-purple-400 workflow-icon" />
                 <p className="text-sm text-gray-300 font-medium text-wrap">
                   Finalize
                 </p>
@@ -220,7 +223,7 @@ export default function Home() {
             </div>
 
             <div className="timeline-item">
-              <div className="timeline-number">3</div>
+              <div className="timeline-number">6</div>
               <div className="timeline-content bg-purple-500/20 text-white border border-stone-500 rounded-full">
                 <TabletSmartphone className="h-4 w-4  rounded-md  text-purple-400 workflow-icon" />
                 <p className="text-sm text-gray-300 font-medium text-wrap">
@@ -230,7 +233,7 @@ export default function Home() {
             </div>
 
             <div className="timeline-item">
-              <div className="timeline-number">3</div>
+              <div className="timeline-number">7</div>
               <div className="timeline-content bg-purple-500/20 text-white border border-stone-500 rounded-full">
                 <Code className="h-4 w-4  rounded-md  text-purple-400 workflow-icon" />
                 <p className="text-sm text-gray-300 font-medium text-wrap">
@@ -239,10 +242,20 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="timeline-item">
-              <div className="timeline-number">3</div>
+             <div className="timeline-item">
+              <div className="timeline-number">8</div>
               <div className="timeline-content bg-purple-500/20 text-white border border-stone-500 rounded-full">
-                <Code className="h-4 w-4  rounded-md  text-purple-400 workflow-icon" />
+                <Rocket className="h-4 w-4  rounded-md  text-purple-400 workflow-icon" />
+                <p className="text-sm text-gray-300 font-medium text-wrap">
+                  Launch
+                </p>
+              </div>
+            </div>
+
+            <div className="timeline-item">
+              <div className="timeline-number">9</div>
+              <div className="timeline-content bg-purple-500/20 text-white border border-stone-500 rounded-full">
+                <MessageSquareCode className="h-4 w-4  rounded-md  text-purple-400 workflow-icon" />
                 <p className="text-sm text-gray-300 font-medium text-wrap">
                   Feedback
                 </p>
