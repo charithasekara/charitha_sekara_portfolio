@@ -22,6 +22,7 @@ import {
   InstagramIcon as BrandInstagram,
   Music,
 } from "lucide-react"
+import emailjs from '@emailjs/browser';
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -35,13 +36,27 @@ export default function ContactPage() {
     setFormData((prev) => ({ ...prev, [name]: value }))
   }
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    // Form submission logic would go here
-    console.log("Form submitted:", formData)
-    // Reset form
-    setFormData({ name: "", email: "", message: "" })
-  }
+ const handleSubmit = () => {
+    // Replace with your EmailJS service ID, template ID, and public key
+    const serviceId = 'service_r7hdpja';
+    const templateId = 'template_nt886ea';
+    const publicKey = 'C8QiEsAzk0AUMbaHx';
+
+    emailjs.send(serviceId, templateId, {
+      from_name: formData.name,
+      from_email: formData.email,
+      message: formData.message
+    }, publicKey)
+      .then((response) => {
+        console.log('Email sent successfully!', response.status, response.text);
+        alert('Message sent successfully!');
+        setFormData({ name: '', email: '', message: '' }); // Reset form
+      })
+      .catch((error) => {
+        console.error('Failed to send email:', error);
+        alert('Failed to send message. Please try again.');
+      });
+  };
 
   return (
     <section className="py-10">
@@ -82,7 +97,7 @@ export default function ContactPage() {
                 required
               />
             </div>
-            <Button type="submit" className="btn-primary w-full">
+            <Button onClick={handleSubmit} className="btn-primary w-full">
               <Send className="mr-2 h-4 w-4" />
               Send Message
             </Button>
