@@ -1,12 +1,12 @@
-"use client"
+"use client";
 
-import type React from "react"
+import type React from "react";
 
-import { useState } from "react"
-import { BentoGrid, BentoCard } from "@/components/bento-grid"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
+import { useEffect, useState } from "react";
+import { BentoGrid, BentoCard } from "@/components/bento-grid";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
 import {
   Send,
   MessageSquare,
@@ -21,40 +21,57 @@ import {
   FileText,
   InstagramIcon as BrandInstagram,
   Music,
-} from "lucide-react"
-import emailjs from '@emailjs/browser';
+} from "lucide-react";
+import emailjs from "@emailjs/browser";
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     message: "",
-  })
+  });
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target
-    setFormData((prev) => ({ ...prev, [name]: value }))
-  }
+  useEffect(() => {
+    // Initialize EmailJS with your public key
+    emailjs.init('C8QiEsAzk0AUMbaHx');
+  }, []);
 
- const handleSubmit = () => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleSubmit = () => {
     // Replace with your EmailJS service ID, template ID, and public key
-    const serviceId = 'service_r7hdpja';
-    const templateId = 'template_nt886ea';
-    const publicKey = 'C8QiEsAzk0AUMbaHx';
+    const serviceId = "service_7qywyib";
+    const templateId = "template_nt886ea";
+    const publicKey = "C8QiEsAzk0AUMbaHx";
 
-    emailjs.send(serviceId, templateId, {
-      from_name: formData.name,
-      from_email: formData.email,
-      message: formData.message
-    }, publicKey)
+    emailjs
+      .send(
+        serviceId,
+        templateId,
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          message: formData.message,
+        },
+        publicKey
+      )
       .then((response) => {
-        console.log('Email sent successfully!', response.status, response.text);
-        alert('Message sent successfully!');
-        setFormData({ name: '', email: '', message: '' }); // Reset form
+        console.log("Email sent successfully!", response.status, response.text);
+        alert("Message sent successfully!");
+        setFormData({ name: "", email: "", message: "" }); // Reset form
       })
       .catch((error) => {
-        console.error('Failed to send email:', error);
-        alert('Failed to send message. Please try again.');
+        console.error("Failed to send email:", error);
+        alert(
+          `Failed to send message: ${
+            error.text || "Unknown error"
+          }. Please try again.`
+        );
       });
   };
 
@@ -63,8 +80,10 @@ export default function ContactPage() {
       <BentoGrid className="container main-layout mx-auto">
         {/* Card 1: Contact Form */}
         <BentoCard colSpan={3} rowSpan={2} hasPersistentHover>
-          <form onSubmit={handleSubmit} className="space-y-4 h-full flex flex-col">
-            <h2 className="text-xl sm:text-2xl font-bold text-white mb-4">Get In Touch</h2>
+          <div className="space-y-4 h-full flex flex-col">
+            <h2 className="text-xl sm:text-2xl font-bold text-white mb-4">
+              Get In Touch
+            </h2>
             <div>
               <Input
                 type="text"
@@ -101,7 +120,7 @@ export default function ContactPage() {
               <Send className="mr-2 h-4 w-4" />
               Send Message
             </Button>
-          </form>
+          </div>
         </BentoCard>
 
         {/* Card 2: Let's Work Together */}
@@ -128,11 +147,13 @@ export default function ContactPage() {
               <BrandWhatsapp className="h-6 w-6" />
             </div>
             <h3 className="text-lg font-medium text-white">WhatsApp</h3>
-            <p className="text-sm text-gray-300 text-wrap">+94702516984, +94721996364</p>
+            <p className="text-sm text-gray-300 text-wrap">
+              +94702516984, +94721996364
+            </p>
           </div>
         </BentoCard>
 
-         {/* Card 7: LinkedIn */}
+        {/* Card 7: LinkedIn */}
         <BentoCard colSpan={1} rowSpan={1} variant="minimal">
           <div className="flex flex-col items-center justify-center h-full text-center">
             <div className="flex items-center justify-center w-12 h-12 rounded-full bg-blue-600/20 text-blue-600 mb-2">
@@ -155,37 +176,36 @@ export default function ContactPage() {
         </BentoCard>
 
         {/* Card 5: Email */}
-        <BentoCard colSpan={1} rowSpan={1}  variant="minimal">
+        <BentoCard colSpan={1} rowSpan={1} variant="minimal">
           <div className="flex flex-col items-center justify-center text-center  h-full">
             <div className="w-10 h-10 rounded-lg flex items-center justify-center bg-red-500/20 text-red-500 mb-3">
               <Mail className="h-6 w-6" />
             </div>
-            
-              <h3 className="text-lg font-medium text-white">Email Me</h3>
-              <p className="text-sm text-gray-300 mt-1 text-wrap">charithmadhushansekara@gmail.com</p>
-              {/* <p className="text-xs text-gray-400">For project inquiries and collaborations</p> */}
-            
+
+            <h3 className="text-lg font-medium text-white">Email Me</h3>
+            <p className="text-sm text-gray-300 mt-1 text-wrap">
+              charithmadhushansekara@gmail.com
+            </p>
+            {/* <p className="text-xs text-gray-400">For project inquiries and collaborations</p> */}
           </div>
         </BentoCard>
 
         {/* Card 6: Twitter */}
-       
 
-       
-
-       
-
-         {/* Card 11: Resume */}
+        {/* Card 11: Resume */}
         <BentoCard colSpan={2} rowSpan={1}>
           <div className="flex flex-col h-full">
             <div className="flex items-center gap-3 mb-3">
               <div className="w-10 h-10 rounded-lg flex items-center justify-center bg-yellow-500/20 text-yellow-500">
                 <FileText className="h-5 w-5" />
               </div>
-              <h3 className="text-lg font-medium text-white">Download My Resume</h3>
+              <h3 className="text-lg font-medium text-white">
+                Download My Resume
+              </h3>
             </div>
             <p className="text-sm text-gray-300 mb-4">
-              Get a detailed overview of my skills, experience, and qualifications in PDF format.
+              Get a detailed overview of my skills, experience, and
+              qualifications in PDF format.
             </p>
             <div className="mt-auto">
               <Button className="btn-primary w-full">Download PDF</Button>
@@ -193,7 +213,7 @@ export default function ContactPage() {
           </div>
         </BentoCard>
 
-         <BentoCard colSpan={1} rowSpan={1} variant="minimal">
+        <BentoCard colSpan={1} rowSpan={1} variant="minimal">
           <div className="flex flex-col items-center justify-center h-full text-center">
             <div className="flex items-center justify-center w-12 h-12 rounded-full bg-blue-400/20 text-blue-400 mb-2">
               <BrandTwitter className="h-6 w-6" />
@@ -203,7 +223,7 @@ export default function ContactPage() {
           </div>
         </BentoCard>
 
-         <BentoCard colSpan={1} rowSpan={1} variant="minimal">
+        <BentoCard colSpan={1} rowSpan={1} variant="minimal">
           <div className="flex flex-col items-center justify-center h-full text-center">
             <div className="flex items-center justify-center w-12 h-12 rounded-full bg-blue-400/20 text-blue-400 mb-2">
               <BrandTwitter className="h-6 w-6" />
@@ -246,10 +266,13 @@ export default function ContactPage() {
               <div className="w-10 h-10 rounded-lg flex items-center justify-center bg-purple-500/20 text-purple-500">
                 <Calendar className="h-5 w-5" />
               </div>
-              <h3 className="text-lg font-medium text-white">Schedule a Call</h3>
+              <h3 className="text-lg font-medium text-white">
+                Schedule a Call
+              </h3>
             </div>
             <p className="text-sm text-gray-300 mb-4">
-              Book a 30-minute consultation call to discuss your project requirements and how I can help.
+              Book a 30-minute consultation call to discuss your project
+              requirements and how I can help.
             </p>
             <div className="mt-auto">
               <Button className="btn-primary w-full">Book a Time Slot</Button>
@@ -291,5 +314,5 @@ export default function ContactPage() {
         </BentoCard>
       </BentoGrid>
     </section>
-  )
+  );
 }
