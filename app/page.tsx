@@ -42,10 +42,12 @@ import {
   BookCheck,
   Rocket,
   MessageSquareCode,
+  Download,
 } from "lucide-react";
 
 import ProjectImage from "@/components/project-image";
 import { AuroraText } from "@/components/aurora-text";
+import { IconBrandBehance } from "@tabler/icons-react";
 
 const projects = [
   { imageSrc: "/pimg1.png", href: "/project1" },
@@ -117,23 +119,10 @@ export default function Home() {
               href="/Charitha_Weerasekara_Resume.pdf"
               download="Charitha_Weerasekara_Resume.pdf"
               aria-label="Download Charitha's resume"
-              className="flex items-center gap-2 px-4 py-2 text-sm font-normal border border-purple-500/20 text-white hover:bg-purple-500/20 rounded-full transition-colors duration-200"
+              className="flex items-center gap-2 px-4 py-2 text-xs font-normal border border-purple-500/20 text-white hover:bg-purple-500/20 rounded-full transition-colors duration-200"
             >
-              <span className="hidden sm:inline">Resume</span>{" "}
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-5 w-5"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M12 4v12m0 0l-4-4m4 4l4-4M4 16v4h16v-4"
-                />
-              </svg>
+              <span className="">Resume</span>{" "}
+                <Download className="h-4 w-4  hidden sm:inline" />
             </a>
           </div>
         </BentoCard>
