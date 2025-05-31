@@ -111,6 +111,31 @@ export default function Home() {
               </motion.div>
             </div>
           </div>
+
+          <div className="absolute top-4 right-4">
+            <a
+              href="/Charitha_Weerasekara_Resume.pdf"
+              download="Charitha_Weerasekara_Resume.pdf"
+              aria-label="Download Charitha's resume"
+              className="flex items-center gap-2 px-4 py-2 text-sm font-normal border border-purple-500/20 text-white hover:bg-purple-500/20 rounded-full transition-colors duration-200"
+            >
+              <span className="hidden sm:inline">Resume</span>{" "}
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-5 w-5"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M12 4v12m0 0l-4-4m4 4l4-4M4 16v4h16v-4"
+                />
+              </svg>
+            </a>
+          </div>
         </BentoCard>
 
         {/* Card 2: Brief Bio */}
@@ -242,7 +267,7 @@ export default function Home() {
               </div>
             </div>
 
-             <div className="timeline-item">
+            <div className="timeline-item">
               <div className="timeline-number">8</div>
               <div className="timeline-content bg-purple-500/20 text-white border border-stone-500 rounded-full">
                 <Rocket className="h-4 w-4  rounded-md  text-purple-400 workflow-icon" />
