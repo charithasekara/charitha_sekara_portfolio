@@ -19,6 +19,11 @@ import {
   ChevronRight,
   Github,
   PencilRuler,
+  AudioWaveform,
+  Bolt,
+  Waves,
+  Hourglass,
+  Megaphone,
 } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
@@ -269,8 +274,8 @@ export default function SkillsPage() {
           className="md:col-span-1"
         >
           <div className="flex flex-col items-center justify-center h-full text-center">
-            <div className="w-12 h-12 rounded-full bg-purple-500/20 text-purple-500 flex items-center justify-center mb-2">
-              <MessageSquare className="h-6 w-6" />
+            <div className="w-12 h-12 rounded-full bg-blue-500/20 text-blue-500 flex items-center justify-center mb-2">
+              <AudioWaveform className="h-6 w-6" />
             </div>
             <h3 className="text-lg font-medium text-white">Communication</h3>
             <p className="text-xs text-gray-400">Clear & effective</p>
@@ -286,8 +291,8 @@ export default function SkillsPage() {
           className="md:col-span-1"
         >
           <div className="flex flex-col items-center justify-center h-full text-center">
-            <div className="w-12 h-12 rounded-full bg-purple-500/20 text-purple-500 flex items-center justify-center mb-2">
-              <MessageSquare className="h-6 w-6" />
+            <div className="w-12 h-12 rounded-full bg-green-500/20 text-green-500 flex items-center justify-center mb-2">
+              <Bolt className="h-6 w-6" />
             </div>
             <h3 className="text-lg font-medium text-white">Problem-Solving </h3>
             <p className="text-xs text-gray-400">Analytical & Creative</p>
@@ -343,8 +348,8 @@ export default function SkillsPage() {
           className="md:col-span-1"
         >
           <div className="flex flex-col items-center justify-center h-full text-center">
-            <div className="w-12 h-12 rounded-full bg-purple-500/20 text-purple-500 flex items-center justify-center mb-2">
-              <MessageSquare className="h-6 w-6" />
+            <div className="w-12 h-12 rounded-full bg-indigo-500/20 text-indigo-500 flex items-center justify-center mb-2">
+              <Waves className="h-6 w-6" />
             </div>
             <h3 className="text-lg font-medium text-white">Adaptability</h3>
             <p className="text-xs text-gray-400">Flexible & Open-minded</p>
@@ -390,8 +395,8 @@ export default function SkillsPage() {
           className="md:col-span-1"
         >
           <div className="flex flex-col items-center justify-center h-full text-center">
-            <div className="w-12 h-12 rounded-full bg-purple-500/20 text-purple-500 flex items-center justify-center mb-2">
-              <MessageSquare className="h-6 w-6" />
+            <div className="w-12 h-12 rounded-full bg-fuchsia-500/20 text-fuchsia-500 flex items-center justify-center mb-2">
+              <Users className="h-6 w-6" />
             </div>
             <h3 className="text-lg font-medium text-white">Teamwork</h3>
             <p className="text-xs text-gray-400">Collaborative & supportive</p>
@@ -406,8 +411,8 @@ export default function SkillsPage() {
           className="md:col-span-1"
         >
           <div className="flex flex-col items-center justify-center h-full text-center">
-            <div className="w-12 h-12 rounded-full bg-purple-500/20 text-purple-500 flex items-center justify-center mb-2">
-              <MessageSquare className="h-6 w-6" />
+            <div className="w-12 h-12 rounded-full bg-teal-500/20 text-teal-500 flex items-center justify-center mb-2">
+              <Hourglass className="h-6 w-6" />
             </div>
             <h3 className="text-lg font-medium text-white">Time Management</h3>
             <p className="text-xs text-gray-400">Organized & Efficient</p>
@@ -422,8 +427,8 @@ export default function SkillsPage() {
           className="md:col-span-1"
         >
           <div className="flex flex-col items-center justify-center h-full text-center">
-            <div className="w-12 h-12 rounded-full bg-purple-500/20 text-purple-500 flex items-center justify-center mb-2">
-              <Users className="h-6 w-6" />
+            <div className="w-12 h-12 rounded-full bg-orange-500/20 text-orange-500 flex items-center justify-center mb-2">
+              <Megaphone className="h-6 w-6" />
             </div>
             <h3 className="text-lg font-medium text-white">Attention to Detail</h3>
             <p className="text-xs text-gray-400"> Precise & Thorough</p>
