@@ -712,3 +712,26 @@
   min-width: 16px;
   min-height: 16px;
 }
+
+.carousel-container {
+  display: flex;
+  overflow-x: auto;
+  -webkit-scroll-snap-type: x mandatory;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+}
+
+.carousel-container > div {
+  scroll-snap-align: center;
+  flex-shrink: 0;
+}
+.hide-scrollbar::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+.hide-scrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+  /* Fallback for unsupported browsers */
+  scrollbar-color: transparent transparent;
+}

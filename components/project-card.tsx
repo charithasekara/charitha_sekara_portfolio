@@ -37,9 +37,9 @@ export default function ProjectCard({ imageSrc, title, category, href = "#", cla
           {onViewDetails && (
           <Button
             onClick={onViewDetails}
-            className="btn-icon mt-2 w-full"
+            className="btn-icon w-full"
           >
-            <MoveUpRight className="ml-2 h-4 w-4" />
+            <MoveUpRight className="h-4 w-4" />
           </Button>
         )}
         </div>
