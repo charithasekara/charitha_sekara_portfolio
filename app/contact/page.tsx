@@ -23,6 +23,11 @@ import {
   Music,
 } from "lucide-react";
 import emailjs from "@emailjs/browser";
+import {
+  IconBrandBehance,
+  IconBrandDribbble,
+  IconBrandTelegram,
+} from "@tabler/icons-react";
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -33,7 +38,7 @@ export default function ContactPage() {
 
   useEffect(() => {
     // Initialize EmailJS with your public key
-    emailjs.init('C8QiEsAzk0AUMbaHx');
+    emailjs.init("C8QiEsAzk0AUMbaHx");
   }, []);
 
   const handleChange = (
@@ -168,7 +173,7 @@ export default function ContactPage() {
         <BentoCard colSpan={1} rowSpan={1} variant="minimal">
           <div className="flex flex-col items-center justify-center h-full text-center">
             <div className="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-500 mb-2">
-              <BrandTelegram className="h-6 w-6" />
+              <IconBrandTelegram stroke={2} className="h-6 w-6" />
             </div>
             <h3 className="text-lg font-medium text-white">Telegram</h3>
             <p className="text-sm text-gray-300">@charitha</p>
@@ -176,7 +181,7 @@ export default function ContactPage() {
         </BentoCard>
 
         {/* Card 5: Email */}
-        <BentoCard colSpan={1} rowSpan={1} variant="minimal">
+        <BentoCard colSpan={2} rowSpan={1} variant="minimal">
           <div className="flex flex-col items-center justify-center text-center  h-full">
             <div className="w-10 h-10 rounded-lg flex items-center justify-center bg-red-500/20 text-red-500 mb-3">
               <Mail className="h-6 w-6" />
@@ -193,42 +198,45 @@ export default function ContactPage() {
         {/* Card 6: Twitter */}
 
         {/* Card 11: Resume */}
-        <BentoCard colSpan={2} rowSpan={1}>
+        <BentoCard colSpan={1} rowSpan={1}>
           <div className="flex flex-col h-full">
             <div className="flex items-center gap-3 mb-3">
               <div className="w-10 h-10 rounded-lg flex items-center justify-center bg-yellow-500/20 text-yellow-500">
                 <FileText className="h-5 w-5" />
               </div>
-              <h3 className="text-lg font-medium text-white">
-                Download My Resume
-              </h3>
+              <h3 className="text-lg font-medium text-white">My Resume</h3>
             </div>
             <p className="text-sm text-gray-300 mb-4">
-              Get a detailed overview of my skills, experience, and
-              qualifications in PDF format.
+              Get a detailed overview in PDF format.
             </p>
             <div className="mt-auto">
-              <Button className="btn-primary w-full">Download PDF</Button>
+              <a
+                href="/Charitha_Weerasekara_Resume.pdf"
+                download="Charitha_Weerasekara_Resume.pdf"
+                aria-label="Download Charitha's resume"
+              >
+                <Button className="btn-primary w-full">Download PDF</Button>
+              </a>
             </div>
           </div>
         </BentoCard>
 
         <BentoCard colSpan={1} rowSpan={1} variant="minimal">
           <div className="flex flex-col items-center justify-center h-full text-center">
-            <div className="flex items-center justify-center w-12 h-12 rounded-full bg-blue-400/20 text-blue-400 mb-2">
-              <BrandTwitter className="h-6 w-6" />
+            <div className="flex items-center justify-center w-12 h-12 rounded-full bg-blue-800/20 text-blue-800 mb-2">
+              <IconBrandBehance stroke={2} className="h-6 w-6" />
             </div>
-            <h3 className="text-lg font-medium text-white">Twitter</h3>
+            <h3 className="text-lg font-medium text-white">Behance</h3>
             <p className="text-sm text-gray-300">@charithasekara</p>
           </div>
         </BentoCard>
 
         <BentoCard colSpan={1} rowSpan={1} variant="minimal">
           <div className="flex flex-col items-center justify-center h-full text-center">
-            <div className="flex items-center justify-center w-12 h-12 rounded-full bg-blue-400/20 text-blue-400 mb-2">
-              <BrandTwitter className="h-6 w-6" />
+            <div className="flex items-center justify-center w-12 h-12 rounded-full bg-pink-500/20 text-pink-500 mb-2">
+              <IconBrandDribbble stroke={2} className="h-6 w-6" />
             </div>
-            <h3 className="text-lg font-medium text-white">Twitter</h3>
+            <h3 className="text-lg font-medium text-white">Dribble</h3>
             <p className="text-sm text-gray-300">@charithasekara</p>
           </div>
         </BentoCard>
