@@ -21,6 +21,8 @@ import {
   FileText,
   InstagramIcon as BrandInstagram,
   Music,
+  Wand,
+  Phone,
 } from "lucide-react";
 import emailjs from "@emailjs/browser";
 import {
@@ -28,6 +30,7 @@ import {
   IconBrandDribbble,
   IconBrandTelegram,
 } from "@tabler/icons-react";
+import Link from "next/link";
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -198,7 +201,7 @@ export default function ContactPage() {
         {/* Card 6: Twitter */}
 
         {/* Card 11: Resume */}
-        <BentoCard colSpan={1} rowSpan={1}>
+        <BentoCard colSpan={1} rowSpan={1} className="md:col-span-3 lg:col-span-1">
           <div className="flex flex-col h-full">
             <div className="flex items-center gap-3 mb-3">
               <div className="w-10 h-10 rounded-lg flex items-center justify-center bg-yellow-500/20 text-yellow-500">
@@ -221,7 +224,7 @@ export default function ContactPage() {
           </div>
         </BentoCard>
 
-        <BentoCard colSpan={1} rowSpan={1} variant="minimal">
+        <BentoCard colSpan={1} rowSpan={1} variant="minimal" className="md:col-span-2 lg:col-span-1">
           <div className="flex flex-col items-center justify-center h-full text-center">
             <div className="flex items-center justify-center w-12 h-12 rounded-full bg-blue-800/20 text-blue-800 mb-2">
               <IconBrandBehance stroke={2} className="h-6 w-6" />
@@ -268,7 +271,7 @@ export default function ContactPage() {
         </BentoCard> */}
 
         {/* Card 8: Schedule a Call */}
-        <BentoCard colSpan={2} rowSpan={1}>
+        {/* <BentoCard colSpan={2} rowSpan={1}>
           <div className="flex flex-col h-full">
             <div className="flex items-center gap-3 mb-3">
               <div className="w-10 h-10 rounded-lg flex items-center justify-center bg-purple-500/20 text-purple-500">
@@ -286,8 +289,29 @@ export default function ContactPage() {
               <Button className="btn-primary w-full">Book a Time Slot</Button>
             </div>
           </div>
-        </BentoCard>
+        </BentoCard> */}
 
+        <BentoCard
+          colSpan={2}
+          rowSpan={1}
+          variant="minimal"
+          className="contact-card md:col-span-3 lg:col-span-2"
+        >
+          <div className="flex flex-col items-center justify-center h-full">
+            <div className="w-10 h-10 rounded-full flex items-center justify-center bg-purple-500/20 text-purple-500 mb-2">
+              <Wand className="h-5 w-5" />
+            </div>
+            <div className="flex flex-col items-center justify-center">
+              <h3 className="font-medium text-lg text-white text-center">
+                Let's Work Together
+              </h3>
+              <p className="text-sm text-gray-300 mb-3 text-center">
+                Have a project in mind? Let's discuss.
+              </p>
+             
+            </div>
+          </div>
+        </BentoCard>
         {/* Card 12: Other Ways to Connect */}
         {/* <BentoCard colSpan={3} rowSpan={1} variant="featured">
           <div className="flex flex-col h-full">
@@ -309,7 +333,7 @@ export default function ContactPage() {
           </div>
         </BentoCard> */}
         {/* New Card: Quick Response */}
-        <BentoCard colSpan={2} rowSpan={1} variant="minimal">
+        <BentoCard colSpan={2} rowSpan={1} variant="minimal" className="md:col-span-5 lg:col-span-2">
           <div className="flex items-center justify-center h-full text-center">
             <div className="flex flex-col items-center">
               <div className="w-12 h-12 rounded-full bg-purple-500/20 text-purple-500 flex items-center justify-center mb-2">
