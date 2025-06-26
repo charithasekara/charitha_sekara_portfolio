@@ -43,6 +43,12 @@ import {
   Rocket,
   MessageSquareCode,
   Download,
+  GraduationCap,
+  Sparkle,
+  MapPin,
+  BookOpen,
+  Heart,
+  Brush,
 } from "lucide-react";
 
 import ProjectImage from "@/components/project-image";
@@ -374,82 +380,120 @@ export default function Home() {
               {/* Row 1 */}
               <div className="flex animate-scroll whitespace-nowrap">
                 <span className="count-label flex items-center gap-2 border border-stone-500 p-1 rounded-md px-2 bg-purple-500/20 text-white mx-2">
-                  <Star className="h-4 w-4 text-purple-500" />
+                  <MapPin className="h-4 w-4 text-purple-500" />
                   Sri Lanka
                 </span>
                 <span className="count-label flex items-center gap-2 border border-stone-500 p-1 rounded-md px-2 bg-purple-500/20 text-white mx-2">
-                  <Star className="h-4 w-4 text-purple-500" />
+                  <Sparkle className="h-4 w-4 text-purple-500" />
                   English & Tamil
                 </span>
                 <span className="count-label flex items-center gap-2 border border-stone-500 p-1 rounded-md px-2 bg-purple-500/20 text-white mx-2">
-                  <Star className="h-4 w-4 text-purple-500" />
+                  <GraduationCap className="h-4 w-4 text-purple-500" />
                   SUSL
                 </span>
                 {/* Duplicate for seamless looping */}
-                <span className="count-label flex items-center gap-2 border border-stone-500 p-1 rounded-md px-2 bg-purple-500/20 text-white mx-2">
-                  <Star className="h-4 w-4 text-purple-500" />
+                 <span className="count-label flex items-center gap-2 border border-stone-500 p-1 rounded-md px-2 bg-purple-500/20 text-white mx-2">
+                  <MapPin className="h-4 w-4 text-purple-500" />
                   Sri Lanka
                 </span>
                 <span className="count-label flex items-center gap-2 border border-stone-500 p-1 rounded-md px-2 bg-purple-500/20 text-white mx-2">
-                  <Star className="h-4 w-4 text-purple-500" />
+                  <Sparkle className="h-4 w-4 text-purple-500" />
                   English & Tamil
                 </span>
                 <span className="count-label flex items-center gap-2 border border-stone-500 p-1 rounded-md px-2 bg-purple-500/20 text-white mx-2">
-                  <Star className="h-4 w-4 text-purple-500" />
+                  <GraduationCap className="h-4 w-4 text-purple-500" />
                   SUSL
                 </span>
 
-                <span className="count-label flex items-center gap-2 border border-stone-500 p-1 rounded-md px-2 bg-purple-500/20 text-white mx-2">
-                  <Star className="h-4 w-4 text-purple-500" />
+                 <span className="count-label flex items-center gap-2 border border-stone-500 p-1 rounded-md px-2 bg-purple-500/20 text-white mx-2">
+                  <MapPin className="h-4 w-4 text-purple-500" />
                   Sri Lanka
                 </span>
                 <span className="count-label flex items-center gap-2 border border-stone-500 p-1 rounded-md px-2 bg-purple-500/20 text-white mx-2">
-                  <Star className="h-4 w-4 text-purple-500" />
+                  <Sparkle className="h-4 w-4 text-purple-500" />
                   English & Tamil
                 </span>
                 <span className="count-label flex items-center gap-2 border border-stone-500 p-1 rounded-md px-2 bg-purple-500/20 text-white mx-2">
-                  <Star className="h-4 w-4 text-purple-500" />
+                  <GraduationCap className="h-4 w-4 text-purple-500" />
+                  SUSL
+                </span>
+                 <span className="count-label flex items-center gap-2 border border-stone-500 p-1 rounded-md px-2 bg-purple-500/20 text-white mx-2">
+                  <MapPin className="h-4 w-4 text-purple-500" />
+                  Sri Lanka
+                </span>
+                <span className="count-label flex items-center gap-2 border border-stone-500 p-1 rounded-md px-2 bg-purple-500/20 text-white mx-2">
+                  <Sparkle className="h-4 w-4 text-purple-500" />
+                  English & Tamil
+                </span>
+                <span className="count-label flex items-center gap-2 border border-stone-500 p-1 rounded-md px-2 bg-purple-500/20 text-white mx-2">
+                  <GraduationCap className="h-4 w-4 text-purple-500" />
                   SUSL
                 </span>
               </div>
               {/* Row 2 */}
               <div className="flex animate-scroll-reverse whitespace-nowrap">
                 <span className="count-label flex items-center gap-2 border border-stone-500 p-1 rounded-md px-2 bg-purple-500/20 text-white mx-2">
-                  <Star className="h-4 w-4 text-purple-500" />
+                  <BookOpen className="h-4 w-4 text-purple-500" />
                   CIS
                 </span>
                 <span className="count-label flex items-center gap-2 border border-stone-500 p-1 rounded-md px-2 bg-purple-500/20 text-white mx-2">
-                  <Star className="h-4 w-4 text-purple-500" />
+                  <Heart className="h-4 w-4 text-purple-500" />
                   UIX Engineer
                 </span>
                 <span className="count-label flex items-center gap-2 border border-stone-500 p-1 rounded-md px-2 bg-purple-500/20 text-white mx-2">
-                  <Star className="h-4 w-4 text-purple-500" />
+                  <Brush className="h-4 w-4 text-purple-500" />
                   Graphic Designer
                 </span>
                 {/* Duplicate for seamless looping */}
                 <span className="count-label flex items-center gap-2 border border-stone-500 p-1 rounded-md px-2 bg-purple-500/20 text-white mx-2">
-                  <Star className="h-4 w-4 text-purple-500" />
+                  <BookOpen className="h-4 w-4 text-purple-500" />
                   CIS
                 </span>
                 <span className="count-label flex items-center gap-2 border border-stone-500 p-1 rounded-md px-2 bg-purple-500/20 text-white mx-2">
-                  <Star className="h-4 w-4 text-purple-500" />
+                  <Heart className="h-4 w-4 text-purple-500" />
                   UIX Engineer
                 </span>
                 <span className="count-label flex items-center gap-2 border border-stone-500 p-1 rounded-md px-2 bg-purple-500/20 text-white mx-2">
-                  <Star className="h-4 w-4 text-purple-500" />
+                  <Brush className="h-4 w-4 text-purple-500" />
                   Graphic Designer
                 </span>
 
-                <span className="count-label flex items-center gap-2 border border-stone-500 p-1 rounded-md px-2 bg-purple-500/20 text-white mx-2">
-                  <Star className="h-4 w-4 text-purple-500" />
+                 <span className="count-label flex items-center gap-2 border border-stone-500 p-1 rounded-md px-2 bg-purple-500/20 text-white mx-2">
+                  <BookOpen className="h-4 w-4 text-purple-500" />
                   CIS
                 </span>
                 <span className="count-label flex items-center gap-2 border border-stone-500 p-1 rounded-md px-2 bg-purple-500/20 text-white mx-2">
-                  <Star className="h-4 w-4 text-purple-500" />
+                  <Heart className="h-4 w-4 text-purple-500" />
                   UIX Engineer
                 </span>
                 <span className="count-label flex items-center gap-2 border border-stone-500 p-1 rounded-md px-2 bg-purple-500/20 text-white mx-2">
-                  <Star className="h-4 w-4 text-purple-500" />
+                  <Brush className="h-4 w-4 text-purple-500" />
+                  Graphic Designer
+                </span>
+
+                 <span className="count-label flex items-center gap-2 border border-stone-500 p-1 rounded-md px-2 bg-purple-500/20 text-white mx-2">
+                  <BookOpen className="h-4 w-4 text-purple-500" />
+                  CIS
+                </span>
+                <span className="count-label flex items-center gap-2 border border-stone-500 p-1 rounded-md px-2 bg-purple-500/20 text-white mx-2">
+                  <Heart className="h-4 w-4 text-purple-500" />
+                  UIX Engineer
+                </span>
+                <span className="count-label flex items-center gap-2 border border-stone-500 p-1 rounded-md px-2 bg-purple-500/20 text-white mx-2">
+                  <Brush className="h-4 w-4 text-purple-500" />
+                  Graphic Designer
+                </span>
+
+                 <span className="count-label flex items-center gap-2 border border-stone-500 p-1 rounded-md px-2 bg-purple-500/20 text-white mx-2">
+                  <BookOpen className="h-4 w-4 text-purple-500" />
+                  CIS
+                </span>
+                <span className="count-label flex items-center gap-2 border border-stone-500 p-1 rounded-md px-2 bg-purple-500/20 text-white mx-2">
+                  <Heart className="h-4 w-4 text-purple-500" />
+                  UIX Engineer
+                </span>
+                <span className="count-label flex items-center gap-2 border border-stone-500 p-1 rounded-md px-2 bg-purple-500/20 text-white mx-2">
+                  <Brush className="h-4 w-4 text-purple-500" />
                   Graphic Designer
                 </span>
               </div>
